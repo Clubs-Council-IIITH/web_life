@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+html,
+body {
+	@apply h-full ;
+}
+.text-base-token {
+	color: #fff;
+}
+.text-dark-token {
+	color: #000;
+}
+.variant-filled-primary, .variant-filled-primary:hover {
+	@apply text-base-token;
+}
+
+.dark .variant-filled-primary, .dark .variant-filled-primary:hover {
+	@apply text-dark-token;
+}
+
+.dark .variant-ghost-surface:hover {
+	background-color: #685703;
+}
+
+.variant-ghost-surface:hover{
+	background-color: #744AA1;
+	color: #fff;
+}
