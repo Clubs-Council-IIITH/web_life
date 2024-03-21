@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { Avatar } from '@skeletonlabs/skeleton';
 	let sacMembers = [
 		{

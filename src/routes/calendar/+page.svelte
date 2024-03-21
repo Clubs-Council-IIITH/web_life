@@ -1,9 +1,3 @@
-
-
-<svelte:head>
-	
-</svelte:head>
-
 <div class="container h-full w-full mx-auto flex justify-center items-center flex-col">
 	<div class="text-center flex flex-col items-center">
 		<h2 class="h2">Events</h2>
