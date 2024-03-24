@@ -7,7 +7,8 @@
 		AppBar,
 		LightSwitch,
 		Drawer,
-		getDrawerStore
+		getDrawerStore,
+		modeCurrent,
 	} from '@skeletonlabs/skeleton';
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
@@ -28,12 +29,28 @@
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
+	import { onMount } from 'svelte';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+	
+	//For Navigation Bar
 	initializeStores();
 	const drawerStore = getDrawerStore();
 	function drawerOpen() {
 		drawerStore.open({});
-	}
+	}	
+	//For Inverted Logos
+	let imgSrc: any;
+	$: {
+        if($modeCurrent == false){
+            console.log('Dark Mode')
+            imgSrc = `${base}/life-iiit-inverted.png`;
+        }
+        else{
+            console.log('Light Mode')
+            imgSrc = `${base}/life-iiit.png`;
+        }
+    }
+
 </script>
 
 <!-- App Shell -->
@@ -56,7 +73,8 @@
 						</svg>
 					</span>
 				</button>
-				<img src={`${base}/life-iiit.png`} alt="IIIT Hyderabad Logo" class="h-12" />
+				<img src={imgSrc} alt="IIIT Hyderabad Logo" class="h-12 logo" />
+
 			</svelte:fragment>
 			<script>
 			</script>
