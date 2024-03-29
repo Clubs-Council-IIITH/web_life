@@ -48,6 +48,8 @@
     "@floating-ui/dom": "1.6.3",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@splidejs/svelte-splide": "^0.2.9",
     "highlight.js": "11.9.0",
     "svelte-fa": "^4.0.2"
   }

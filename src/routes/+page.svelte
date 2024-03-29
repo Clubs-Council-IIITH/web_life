@@ -1,64 +1,63 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
-	let elemCarousel: HTMLDivElement;
+	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
-	import Fa from 'svelte-fa';
-	import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-	function carouselLeft(): void {
-		const x =
-			elemCarousel.scrollLeft === 0
-				? elemCarousel.clientWidth * elemCarousel.childElementCount // loop
-				: elemCarousel.scrollLeft - elemCarousel.clientWidth; // step left
-		elemCarousel.scroll(x, 0);
-	}
-	function carouselRight(): void {
-		const x =
-			elemCarousel.scrollLeft === elemCarousel.scrollWidth - elemCarousel.clientWidth
-				? 0 // loop
-				: elemCarousel.scrollLeft + elemCarousel.clientWidth; // step right
-		elemCarousel.scroll(x, 0);
-	}
-	let intervalId: number;
-	onMount(() => {
-		intervalId = window.setInterval(carouselRight, 8000);
-	});
 
-	onDestroy(() => {
-		clearInterval(intervalId); // Clear interval when component is destroyed
+	let carousel: HTMLElement;
+	let currentIndex = 0;
+	let direction = 1;
+
+	onMount(() => {
+		const intervalId = setInterval(() => {
+			if (currentIndex === carousel.children.length - 1) {
+				direction = -1; // Change direction to backward
+			} else if (currentIndex === 0) {
+				direction = 1; // Change direction to forward
+			}
+
+			currentIndex = currentIndex + direction;
+			carousel.children[currentIndex].scrollIntoView({ behavior: 'smooth' });
+		}, 6000); // Change the interval as needed
+		carousel.addEventListener('wheel', (event) => {
+			event.preventDefault();
+			}, { passive: false });
+		return () => clearInterval(intervalId); // Clear the interval when the component is destroyed
 	});
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="text-center flex flex-col items-center">
+		<br />
 		<h2 class="h2">Welcome to Life@IIIT-H</h2>
-		<div class="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
-			<!-- Button: Left -->
-			<button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
-				<Fa icon={faArrowLeft} />
-			</button>
-			<!-- Full Images -->
-			<div
-				bind:this={elemCarousel}
-				class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto"
-			>
-				{#each Array.from({ length: 12 }, (_, i) => i + 1) as photo}
-					<img
-						class="snap-center w-[1024px] rounded-container-token"
-						src={`${base}/carousel/${photo}.jpg`}
-						alt={`carousel-${photo}`}
-						loading="lazy"
-					/>
-				{/each}
-			</div>
-			<!-- Button: Right -->
-			<button type="button" class="btn-icon variant-filled" on:click={carouselRight}>
-				<Fa icon={faArrowRight} />
-			</button>
+		<br />
+
+		<div
+			bind:this={carousel}
+			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto carousel"
+		>
+			{#each Array.from({ length: 8 }) as _, i}
+				<div class="snap-align-start shrink-0 card text-center carousel-content">
+					<img src="{base}/carousel/{i+1}.jpg" alt="iiit-h" class="carousel-image" draggable="false"/>
+				</div>
+			{/each}
 		</div>
 	</div>
 </div>
 
 <style lang="postcss">
+	.carousel {
+		width: 85vw;
+		height: 65vh;
+		scroll-snap-type: x mandatory;
+	}
+	.carousel-content {
+		scroll-snap-align: start;
+		width: 100%;
+	}
+	.carousel-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 	.snap-x {
 		scrollbar-width: none; /* For Firefox */
 		-ms-overflow-style: none; /* For Internet Explorer and Edge */
