@@ -50,7 +50,10 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@splidejs/svelte-splide": "^0.2.9",
+    "axios": "^1.6.8",
+    "graphql-tag": "^2.12.6",
     "highlight.js": "11.9.0",
-    "svelte-fa": "^4.0.2"
+    "svelte-fa": "^4.0.2",
+    "urql": "^4.0.7"
   }
 }

@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton';
+	import { onMount } from 'svelte';
+	import type { PageData } from './$types';
+
 	let sacMembers = [
 		{
 			uid: 'radhika.mamidi',
@@ -206,8 +209,8 @@
 			]
 		}
 	];
-    let sloMembers = [
-        {
+	let sloMembers = [
+		{
 			uid: 'prabhakar',
 			name: 'Prabhakar M',
 			img: 'https://clubs.iiit.ac.in/_next/image?url=http%3A%2F%2Ffiles%2Ffiles%2Fdownload%3Ffilename%3DTW7T3LrHjbyyDtHPHNztiq_prabhakar.jpg&w=1080&q=75',
@@ -218,46 +221,48 @@
 				}
 			]
 		},
-        {
-            uid: 'vamsi.krishna',
-            name: 'Vamsi Krishna',
-            img: 'https://clubs.iiit.ac.in/_next/image?url=http%3A%2F%2Ffiles%2Ffiles%2Fdownload%3Ffilename%3D3fXHVeqViSZ8A9BHaVeSdt_vamsi.krishna.jpg&w=1080&q=75',
-            positions: [
-                {
-                    pos: 'Member',
-                    years: '2023-present'
-                }
-            ]
-        },
-        {
-            uid: 'akhil.a',
-            name: 'Akhil A',
-            img: 'https://clubs.iiit.ac.in/_next/image?url=http%3A%2F%2Ffiles%2Ffiles%2Fdownload%3Ffilename%3DLCLbLdaM6nL9AppVYT3qTQ_akhil.a.jpg&w=1080&q=75',
-            positions: [
-                {
-                    pos: 'Member',
-                    years: '2021-2023'
-                }
-            ]
-        }
-    ]
+		{
+			uid: 'vamsi.krishna',
+			name: 'Vamsi Krishna',
+			img: 'https://clubs.iiit.ac.in/_next/image?url=http%3A%2F%2Ffiles%2Ffiles%2Fdownload%3Ffilename%3D3fXHVeqViSZ8A9BHaVeSdt_vamsi.krishna.jpg&w=1080&q=75',
+			positions: [
+				{
+					pos: 'Member',
+					years: '2023-present'
+				}
+			]
+		},
+		{
+			uid: 'akhil.a',
+			name: 'Akhil A',
+			img: 'https://clubs.iiit.ac.in/_next/image?url=http%3A%2F%2Ffiles%2Ffiles%2Fdownload%3Ffilename%3DLCLbLdaM6nL9AppVYT3qTQ_akhil.a.jpg&w=1080&q=75',
+			positions: [
+				{
+					pos: 'Member',
+					years: '2021-2023'
+				}
+			]
+		}
+	];
+	export let data: PageData
 </script>
+
 
 <div class="container h-full w-full mx-auto flex justify-center flex-col">
 	<div class="flex flex-col">
 		<h2 class="h2">Student Affairs Committe (SAC)</h2>
 		<h3 class="h3">Members</h3>
 		<div class="avatar-grid">
-			{#each sacMembers as member (member.uid)}
+			{#each data.page_server_data.sac as member}
 				<div class="flex flex-col items-center">
-					<a href={'https://clubs.iiit.ac.in/profile/'+member.uid} target="_blank"
-						><Avatar src={member.img} alt={member.name} width="w-32" rounded="rounded-md" /></a
+					<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target="_blank"
+						><Avatar src={member.imagesrc} alt={member.uid} width="w-32" rounded="rounded-md" /></a
 					>
-					<h4>{member.name}</h4>
+					<h4>{member.firstname + " " + member.lastname}</h4>
 					<br />
-					{#each member.positions as position}
-						<p>{position.pos}</p>
-						<p>{position.years}</p>
+					{#each member.roles as role}
+						<p>{role.name}</p>
+						<p>{role.startYear + "-" + role.endYear}</p>
 						<br />
 					{/each}
 				</div>
@@ -282,16 +287,16 @@
 		<br />
 		<h3 class="h3">Members</h3>
 		<div class="avatar-grid">
-			{#each slcMembers as member (member.uid)}
+			{#each data.page_server_data.slc as member}
 				<div class="flex flex-col items-center">
-					<a href={'https://clubs.iiit.ac.in/profile/'+member.uid} target="_blank"
-						><Avatar src={member.img} alt={member.name} width="w-32" rounded="rounded-md" /></a
+					<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target="_blank"
+						><Avatar src={member.imagesrc} alt={member.uid} width="w-32" rounded="rounded-md" /></a
 					>
-					<h4>{member.name}</h4>
+					<h4>{member.firstname + " " + member.lastname}</h4>
 					<br />
-					{#each member.positions as position}
-						<p>{position.pos}</p>
-						<p>{position.years}</p>
+					{#each member.roles as role}
+						<p>{role.name}</p>
+						<p>{role.startYear + "-" + role.endYear}</p>
 						<br />
 					{/each}
 				</div>
@@ -316,16 +321,16 @@
 		<br />
 		<h3 class="h3">Members</h3>
 		<div class="avatar-grid">
-			{#each sloMembers as member (member.uid)}
+			{#each data.page_server_data.slo as member}
 				<div class="flex flex-col items-center">
-					<a href={'https://clubs.iiit.ac.in/profile/'+member.uid} target="_blank"
-						><Avatar src={member.img} alt={member.name} width="w-32" rounded="rounded-md" /></a
+					<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target="_blank"
+						><Avatar src={member.imagesrc} alt={member.uid} width="w-32" rounded="rounded-md" /></a
 					>
-					<h4>{member.name}</h4>
+					<h4>{member.firstname + " " + member.lastname}</h4>
 					<br />
-					{#each member.positions as position}
-						<p>{position.pos}</p>
-						<p>{position.years}</p>
+					{#each member.roles as role}
+						<p>{role.name}</p>
+						<p>{role.startYear + "-" + role.endYear}</p>
 						<br />
 					{/each}
 				</div>
