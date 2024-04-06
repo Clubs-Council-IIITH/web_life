@@ -1,6 +1,5 @@
 import type { PageServerLoad } from './$types';
 import { getClient } from '$lib/gql/client';
-import { GET_USER_PROFILE } from '$lib/gql/queries/users';
 import { GET_ACTIVE_CLUBS } from '$lib/gql/queries/clubs';
 
 let staticUrl = 'https://clubs.iiit.ac.in/static';

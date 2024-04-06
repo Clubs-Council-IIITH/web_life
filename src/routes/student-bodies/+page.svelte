@@ -6,7 +6,6 @@
 	export let data: PageData;
 </script>
 
-<!-- <pre>{JSON.stringify(data.page_server_data, null, 2)}</pre> -->
 <div class="container h-full w-full mx-auto flex justify-center items-center flex-col">
 	<div class="text-center flex flex-col items-center">
 		<h2 class="h2">Student Bodies</h2>
