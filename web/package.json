@@ -1,9 +1,9 @@
 {
-  "name": "my-skeleton-app",
-  "version": "0.0.1",
+  "name": "life_iiith",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite dev",
+    "dev": "vite dev --port 80 --host",
     "build": "vite build",
     "preview": "vite preview",
     "test": "npm run test:integration && npm run test:unit",

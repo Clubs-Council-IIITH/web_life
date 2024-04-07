@@ -5,7 +5,6 @@
 	export let data: PageData;
 	onMount(async () => {
 		calendarEl = document.getElementById('calendar');
-		console.log('hello');
 		if (calendarEl) {
 			// @ts-ignore
 			var calendar = new FullCalendar.Calendar(calendarEl, {

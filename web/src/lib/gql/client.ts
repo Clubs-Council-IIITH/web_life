@@ -11,7 +11,7 @@ const makeClient = () => {
   const client = createClient({
     url: GRAPHQL_ENDPOINT,
     exchanges: [
-      debugExchange,
+      // debugExchange,
       cacheExchange,
       fetchExchange
     ],
