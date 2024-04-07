@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite dev --port 80 --host",
+    "devel": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
     "test": "npm run test:integration && npm run test:unit",
@@ -48,15 +49,9 @@
   "type": "module",
   "dependencies": {
     "@floating-ui/dom": "1.6.3",
-    "@fortawesome/free-brands-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
-    "@splidejs/svelte-splide": "^0.2.9",
-    "axios": "^1.6.8",
     "graphql-tag": "^2.12.6",
     "highlight.js": "11.9.0",
     "string-to-color": "^2.2.2",
-    "svelte-fa": "^4.0.2",
     "urql": "^4.0.7"
   }
 }

@@ -1,31 +1,37 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import Carousel from '$lib/carousel/Carousel.svelte';
+	import type { HTMLImgAttributes } from 'svelte/elements';
+	interface ExtendedImgAttributes extends HTMLImgAttributes {
+		desc?: string;
+		title?: string;
+	}
 
-	let carousel: HTMLElement;
-	let currentIndex = 0;
-	let direction = 1;
+	// let carousel: HTMLElement;
+	// let currentIndex = 0;
+	// let direction = 1;
 
-	onMount(() => {
-		const intervalId = setInterval(() => {
-			if (currentIndex === carousel.children.length - 1) {
-				direction = -1; // Change direction to backward
-			} else if (currentIndex === 0) {
-				direction = 1; // Change direction to forward
-			}
+	// onMount(() => {
+	// 	const intervalId = setInterval(() => {
+	// 		if (currentIndex === carousel.children.length - 1) {
+	// 			direction = -1; // Change direction to backward
+	// 		} else if (currentIndex === 0) {
+	// 			direction = 1; // Change direction to forward
+	// 		}
 
-			currentIndex = currentIndex + direction;
-			carousel.children[currentIndex].scrollIntoView({ behavior: 'smooth' });
-		}, 6000); // Change the interval as needed
-		carousel.addEventListener(
-			'wheel',
-			(event) => {
-				event.preventDefault();
-			},
-			{ passive: false }
-		);
-		return () => clearInterval(intervalId); // Clear the interval when the component is destroyed
-	});
+	// 		currentIndex = currentIndex + direction;
+	// 		carousel.children[currentIndex].scrollIntoView({ behavior: 'smooth' });
+	// 	}, 6000); // Change the interval as needed
+	// 	carousel.addEventListener(
+	// 		'wheel',
+	// 		(event) => {
+	// 			event.preventDefault();
+	// 		},
+	// 		{ passive: false }
+	// 	);
+	// 	return () => clearInterval(intervalId); // Clear the interval when the component is destroyed
+	// });
 
 	let description = [
 		{
@@ -69,15 +75,25 @@
 			'desc': 'A vibrant residential community.'
 		}
 	]
+	let images: ExtendedImgAttributes[] = [];
+	for(let i = 0; i < description.length; i++) {
+		images.push({
+			src: `${base}/carousel/${i + 1}.jpg`,
+			alt: 'iiit-h',
+			draggable: false,
+			desc: description[i].desc,
+			title: description[i].title
+		});
+	}
 </script>
 
-<div class="container h-full mx-auto flex justify-center items-center">
+<div class="container h-full mx-auto justify-center items-center">
 	<div class="text-center flex flex-col items-center">
 		<br />
 		<h2 class="h2">Welcome to Life@IIIT-H</h2>
 		<br />
 
-		<div
+		<!-- <div
 			bind:this={carousel}
 			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto carousel"
 		>
@@ -95,15 +111,18 @@
 					</div>
 				</div>
 			{/each}
-		</div>
+		</div> -->
 	</div>
+	<Carousel {images} duration={3000}>
+	</Carousel>
 </div>
 
-<style lang="postcss">
+<!-- <style lang="postcss">
 	.carousel {
 		width: 85vw;
 		height: 65vh;
 		scroll-snap-type: x mandatory;
+		border-radius: 20px;
 	}
 	.carousel-content {
 		scroll-snap-align: start;
@@ -141,4 +160,4 @@
 		font-size: 1.5rem;
 		font-weight: 700;
 	}
-</style>
+</style> -->
