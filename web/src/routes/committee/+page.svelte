@@ -14,7 +14,8 @@
 		<br />
 		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.sac as member}
-				<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card">
+				<!-- <a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card"> -->
+				<div class="w-full max-w-s rounded-lg card">
 					<br />
 					<div class="flex flex-col items-center pb-10">
 						<img class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover" src={member.imagesrc} alt={member.uid} />
@@ -29,7 +30,8 @@
 							</div>
 						{/each}
 					</div>
-				</a>
+				</div>
+				<!-- </a> -->
 			{/each}
 		</div>
 		<br />
