@@ -14,13 +14,18 @@
 		<br />
 		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.sac as member}
-				<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card">
+				<!-- <a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card"> -->
+				<div class="w-full max-w-s rounded-lg card">
 					<br />
 					<div class="flex flex-col items-center pb-10">
-						<img class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover" src={member.imagesrc} alt={member.uid} />
-						<h5 class="mb-1 text-xl font-medium">{member.firstname + " " + member.lastname}</h5>
+						<img
+							class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover"
+							src={member.imagesrc}
+							alt={member.uid}
+						/>
+						<h5 class="mb-1 text-xl font-medium">{member.firstname + ' ' + member.lastname}</h5>
 						<br />
-						
+
 						<!-- Roles and Years -->
 						{#each member.roles as role}
 							<div class="flex flex-col items-center">
@@ -29,7 +34,8 @@
 							</div>
 						{/each}
 					</div>
-				</a>
+				</div>
+				<!-- </a> -->
 			{/each}
 		</div>
 		<br />
@@ -54,13 +60,21 @@
 		<br />
 		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.slc as member}
-				<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card">
+				<a
+					href={'https://clubs.iiit.ac.in/profile/' + member.uid}
+					target="_blank"
+					class="w-full max-w-s rounded-lg card"
+				>
 					<br />
 					<div class="flex flex-col items-center pb-10">
-						<img class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover" src={member.imagesrc} alt={member.uid} />
-						<h5 class="mb-1 text-xl font-medium">{member.firstname + " " + member.lastname}</h5>
+						<img
+							class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover"
+							src={member.imagesrc}
+							alt={member.uid}
+						/>
+						<h5 class="mb-1 text-xl font-medium">{member.firstname + ' ' + member.lastname}</h5>
 						<br />
-						
+
 						<!-- Roles and Years -->
 						{#each member.roles as role}
 							<div class="flex flex-col items-center">
@@ -94,13 +108,21 @@
 		<br />
 		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.slo as member}
-				<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card">
+				<a
+					href={'https://clubs.iiit.ac.in/profile/' + member.uid}
+					target="_blank"
+					class="w-full max-w-s rounded-lg card"
+				>
 					<br />
 					<div class="flex flex-col items-center pb-10">
-						<img class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover" src={member.imagesrc} alt={member.uid} />
-						<h5 class="mb-1 text-xl font-medium">{member.firstname + " " + member.lastname}</h5>
+						<img
+							class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover"
+							src={member.imagesrc}
+							alt={member.uid}
+						/>
+						<h5 class="mb-1 text-xl font-medium">{member.firstname + ' ' + member.lastname}</h5>
 						<br />
-						
+
 						<!-- Roles and Years -->
 						{#each member.roles as role}
 							<div class="flex flex-col items-center">
@@ -124,14 +146,16 @@
 		text-align: center;
 	}
 	.avatar-grid .card:hover {
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        background-color: #f3f4f6; /* Change the background color to highlight */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-    }
+		transition:
+			background-color 0.3s ease,
+			box-shadow 0.3s ease;
+		background-color: #f3f4f6; /* Change the background color to highlight */
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+	}
 
-    /* Dark mode hover effect */
-    .dark .avatar-grid .card:hover {
-        background-color: #374151; /* Change the background color for dark mode */
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Add a subtle box shadow for dark mode */
-    }
+	/* Dark mode hover effect */
+	.dark .avatar-grid .card:hover {
+		background-color: #374151; /* Change the background color for dark mode */
+		box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Add a subtle box shadow for dark mode */
+	}
 </style>

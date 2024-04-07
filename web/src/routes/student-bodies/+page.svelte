@@ -15,7 +15,11 @@
 	<div class="mx-4">
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 			{#each data.page_server_data.clubs as studentbody}
-				<a href={'https://clubs.iiit.ac.in/student-bodies/' + studentbody.cid} target='_blank' class="block">
+				<a
+					href={studentbody.redirectURL}
+					target="_blank"
+					class="block"
+				>
 					<div
 						class="relative h-64 overflow-hidden rounded-lg hover:shadow-xl hover:scale-105 transition duration-300"
 					>

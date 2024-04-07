@@ -11,7 +11,7 @@ const makeClient = () => {
   const client = createClient({
     url: GRAPHQL_ENDPOINT,
     exchanges: [
-      debugExchange,
+      // debugExchange,
       cacheExchange,
       fetchExchange
     ],
@@ -36,16 +36,16 @@ const makeClient = () => {
 };
 
 export const getClient = () => {
-    // Subscribe to the clientStore and get the current value
-    let existingClient;
-    clientStore.subscribe(value => {
-      existingClient = value;
-    });
-  
-    // Check if client is already created, if not, create one
-    if (existingClient) {
-      return existingClient;
-    } else {
-      return makeClient();
-    }
-  };
+  // Subscribe to the clientStore and get the current value
+  let existingClient;
+  clientStore.subscribe(value => {
+    existingClient = value;
+  });
+
+  // Check if client is already created, if not, create one
+  if (existingClient) {
+    return existingClient;
+  } else {
+    return makeClient();
+  }
+};
