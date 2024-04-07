@@ -7,15 +7,11 @@ export const GET_USER_PROFILE = gql`
       lastName
       email
       gender
-      batch
-      stream
-      rollno
     }
     userMeta(userInput: $userInput) {
       uid
       img
       role
-      phone
     }
   }
 `;

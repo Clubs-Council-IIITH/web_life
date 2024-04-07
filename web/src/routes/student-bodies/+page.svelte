@@ -16,7 +16,7 @@
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 			{#each data.page_server_data.clubs as studentbody}
 				<a
-					href={'https://clubs.iiit.ac.in/student-bodies/' + studentbody.cid}
+					href={studentbody.redirectURL}
 					target="_blank"
 					class="block"
 				>
