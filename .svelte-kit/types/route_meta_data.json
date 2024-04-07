@@ -1,0 +1,21 @@
+{
+	"/": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.ts"
+	],
+	"/calendar": [
+		"src/routes/calendar/+page.ts",
+		"src/routes/calendar/+page.server.ts",
+		"src/routes/+layout.ts"
+	],
+	"/committee": [
+		"src/routes/committee/+page.ts",
+		"src/routes/committee/+page.server.ts",
+		"src/routes/+layout.ts"
+	],
+	"/student-bodies": [
+		"src/routes/student-bodies/+page.ts",
+		"src/routes/student-bodies/+page.server.ts",
+		"src/routes/+layout.ts"
+	]
+}
