@@ -31,6 +31,8 @@
     "@tailwindcss/typography": "0.5.10",
     "@types/node": "20.11.30",
     "autoprefixer": "10.4.19",
+    "flowbite": "^2.3.0",
+    "flowbite-svelte": "^0.44.24",
     "postcss": "8.4.38",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",
