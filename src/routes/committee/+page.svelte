@@ -2,29 +2,37 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
-	export let data: PageData
+	export let data: PageData;
 </script>
 
 <div class="container h-full w-full mx-auto flex justify-center flex-col">
 	<div class="flex flex-col">
+		<br />
 		<h2 class="h2">Student Affairs Committe (SAC)</h2>
+		<br />
 		<h3 class="h3">Members</h3>
-		<div class="avatar-grid">
+		<br />
+		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.sac as member}
-				<div class="flex flex-col items-center">
-					<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target="_blank"
-						><Avatar src={member.imagesrc} alt={member.uid} width="w-32" rounded="rounded-md" /></a
-					>
-					<h4>{member.firstname + " " + member.lastname}</h4>
+				<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card">
 					<br />
-					{#each member.roles as role}
-						<p>{role.name}</p>
-						<p>{role.startYear + "-" + role.endYear}</p>
+					<div class="flex flex-col items-center pb-10">
+						<img class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover" src={member.imagesrc} alt={member.uid} />
+						<h5 class="mb-1 text-xl font-medium">{member.firstname + " " + member.lastname}</h5>
 						<br />
-					{/each}
-				</div>
+						
+						<!-- Roles and Years -->
+						{#each member.roles as role}
+							<div class="flex flex-col items-center">
+								<p class="font-bold">{role.name}</p>
+								<p class="text-gray-500">{role.startYear} - {role.endYear}</p>
+							</div>
+						{/each}
+					</div>
+				</a>
 			{/each}
 		</div>
+		<br />
 		<h2 class="h2">Student Life Committe (SLC)</h2>
 		<br />
 		<h3 class="h3">What do we do?</h3>
@@ -43,22 +51,28 @@
 		</p>
 		<br />
 		<h3 class="h3">Members</h3>
-		<div class="avatar-grid">
+		<br />
+		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.slc as member}
-				<div class="flex flex-col items-center">
-					<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target="_blank"
-						><Avatar src={member.imagesrc} alt={member.uid} width="w-32" rounded="rounded-md" /></a
-					>
-					<h4>{member.firstname + " " + member.lastname}</h4>
+				<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card">
 					<br />
-					{#each member.roles as role}
-						<p>{role.name}</p>
-						<p>{role.startYear + "-" + role.endYear}</p>
+					<div class="flex flex-col items-center pb-10">
+						<img class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover" src={member.imagesrc} alt={member.uid} />
+						<h5 class="mb-1 text-xl font-medium">{member.firstname + " " + member.lastname}</h5>
 						<br />
-					{/each}
-				</div>
+						
+						<!-- Roles and Years -->
+						{#each member.roles as role}
+							<div class="flex flex-col items-center">
+								<p class="font-bold">{role.name}</p>
+								<p class="text-gray-500">{role.startYear} - {role.endYear}</p>
+							</div>
+						{/each}
+					</div>
+				</a>
 			{/each}
 		</div>
+		<br />
 		<h2 class="h2">Student Life Office (SLO)</h2>
 		<br />
 		<h3 class="h3">What do we do?</h3>
@@ -77,22 +91,28 @@
 		</p>
 		<br />
 		<h3 class="h3">Members</h3>
-		<div class="avatar-grid">
+		<br />
+		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.slo as member}
-				<div class="flex flex-col items-center">
-					<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target="_blank"
-						><Avatar src={member.imagesrc} alt={member.uid} width="w-32" rounded="rounded-md" /></a
-					>
-					<h4>{member.firstname + " " + member.lastname}</h4>
+				<a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card">
 					<br />
-					{#each member.roles as role}
-						<p>{role.name}</p>
-						<p>{role.startYear + "-" + role.endYear}</p>
+					<div class="flex flex-col items-center pb-10">
+						<img class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover" src={member.imagesrc} alt={member.uid} />
+						<h5 class="mb-1 text-xl font-medium">{member.firstname + " " + member.lastname}</h5>
 						<br />
-					{/each}
-				</div>
+						
+						<!-- Roles and Years -->
+						{#each member.roles as role}
+							<div class="flex flex-col items-center">
+								<p class="font-bold">{role.name}</p>
+								<p class="text-gray-500">{role.startYear} - {role.endYear}</p>
+							</div>
+						{/each}
+					</div>
+				</a>
 			{/each}
 		</div>
+		<br />
 	</div>
 </div>
 
@@ -103,4 +123,15 @@
 		gap: 1rem;
 		text-align: center;
 	}
+	.avatar-grid .card:hover {
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        background-color: #f3f4f6; /* Change the background color to highlight */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    }
+
+    /* Dark mode hover effect */
+    .dark .avatar-grid .card:hover {
+        background-color: #374151; /* Change the background color for dark mode */
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Add a subtle box shadow for dark mode */
+    }
 </style>

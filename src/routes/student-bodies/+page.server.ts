@@ -37,6 +37,9 @@ export const load: PageServerLoad = async () => {
 			let banner = activeClubs[i].banner;
 			activeClubs[i].banner = getFile(banner);
 			allClubs = [...allClubs, activeClubs[i]];
+			if(activeClubs[i].cid == 'ec'){
+				activeClubs[i].banner = 'https://clubs.iiit.ac.in/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2FRWxlY3Rpb24gQ29tbWlzc2lvbg%3D%3D%2F640%2F480%3Fblur%3D1&w=1920&q=75'
+			}
 		}
 	}
 	allClubs = [...allClubs, cc];

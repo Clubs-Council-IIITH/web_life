@@ -7,47 +7,43 @@
 </script>
 
 <div class="container h-full w-full mx-auto flex justify-center items-center flex-col">
+	<br />
 	<div class="text-center flex flex-col items-center">
 		<h2 class="h2">Student Bodies</h2>
 	</div>
-	<div class="card-grid">
-		{#each data.page_server_data.clubs as studentbody}
-			<a
-				class="card {currentVariant} card-hover overflow-hidden size"
-				href={'https://clubs.iiit.ac.in/student-bodies/' + studentbody.cid}
-				target="_blank"
-			>
-				<header>
-					<img src={studentbody.banner} class="bg-black/50 w-full aspect-[21/9]" alt="Post" />
-				</header>
-				<div class="p-4 space-y-4">
-					<h3 class="h3" data-toc-ignore>{studentbody.name}</h3>
-					<article>
-						<p>
-							<!-- cspell:disable -->
-							{#if studentbody.tagline != null}
-								{studentbody.tagline}
-							{/if}
-							<!-- cspell:enable -->
-						</p>
-					</article>
-				</div>
-				<hr class="opacity-50" />
-				<Avatar src={studentbody.logo} width="w-8" />
-			</a>
-		{/each}
+	<br />
+	<div class="mx-4">
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+			{#each data.page_server_data.clubs as studentbody}
+				<a href={'https://clubs.iiit.ac.in/student-bodies/' + studentbody.cid} target='_blank' class="block">
+					<div
+						class="relative h-64 overflow-hidden rounded-lg hover:shadow-xl hover:scale-105 transition duration-300"
+					>
+						<img class="rounded-lg object-cover w-full h-full" src={studentbody.banner} alt="" />
+						<div
+							class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-70"
+						></div>
+						<div class="absolute bottom-4 left-4 text-white z-10 flex items-center">
+							<img
+								class="w-10 h-10 rounded-full object-cover border-white border-2"
+								src={studentbody.logo}
+								alt="Club Logo"
+							/>
+							<div class="ml-2">
+								<h3 class="font-bold">{studentbody.name}</h3>
+								{#if studentbody.tagline}
+									<p>{studentbody.tagline}</p>
+								{/if}
+							</div>
+						</div>
+					</div>
+				</a>
+			{/each}
+		</div>
 	</div>
+
+	<br />
 </div>
 
 <style lang="postcss">
-	.size {
-		width: 300px;
-		height: 500px;
-	}
-	.card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-		gap: 100px;
-		width: 100%;
-	}
 </style>
