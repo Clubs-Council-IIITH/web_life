@@ -29,46 +29,46 @@
 
 	let description = [
 		{
-			'title': 'Life at IIIT',
-			'desc': 'Eat. Sleep. Code? Not Quite.'
+			title: 'Life at IIIT',
+			desc: 'Eat. Sleep. Code? Not Quite.'
 		},
 		{
-			'title': 'Clubs at IIIT',
-			'desc': 'Explore your student life beyond the classroom.'
+			title: 'Clubs at IIIT',
+			desc: 'Explore your student life beyond the classroom.'
 		},
 		{
-			'title': 'Unrestricted Fun!',
-			'desc': 'Join in on fun events!'
+			title: 'Unrestricted Fun!',
+			desc: 'Join in on fun events!'
 		},
 		{
-			'title': 'Connect IIIT',
-			'desc': 'Come together to learn, work, live and play.'
+			title: 'Connect IIIT',
+			desc: 'Come together to learn, work, live and play.'
 		},
 		{
-			'title': 'Success Stories',
-			'desc': 'Witness legends in the making.'
+			title: 'Success Stories',
+			desc: 'Witness legends in the making.'
 		},
 		{
-			'title': 'Experience IIIT',
-			'desc': 'Expand your mind, explore your passion.'
+			title: 'Experience IIIT',
+			desc: 'Expand your mind, explore your passion.'
 		},
 		{
-			'title': 'Challengers',
-			'desc': 'Up the potential for fun.'
+			title: 'Challengers',
+			desc: 'Up the potential for fun.'
 		},
 		{
-			'title': 'Perform together',
-			'desc': 'Let the beat take over.'
+			title: 'Perform together',
+			desc: 'Let the beat take over.'
 		},
 		{
-			'title': 'Artistry',
-			'desc': 'Unleash your creativity.'
+			title: 'Artistry',
+			desc: 'Unleash your creativity.'
 		},
 		{
-			'title': 'Campus Life',
-			'desc': 'A vibrant residential community.'
+			title: 'Campus Life',
+			desc: 'A vibrant residential community.'
 		}
-	]
+	];
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">

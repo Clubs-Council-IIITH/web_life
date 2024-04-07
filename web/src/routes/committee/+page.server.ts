@@ -10,19 +10,19 @@ function getStaticFile(filepath: string) {
 
 function getFile(filepath: String) {
 	if (filepath?.toLowerCase()?.startsWith("http")) {
-	  // return the full URL if global URL
-	  return filepath;
+		// return the full URL if global URL
+		return filepath;
 	} else if (filepath) {
-	  // call files service if local URL
-	  return `${FILESERVER_URL}/files/download?filename=${filepath}`;
+		// call files service if local URL
+		return `${FILESERVER_URL}/files/download?filename=${filepath}`;
 	}
-  }
+}
 
 export const load: PageServerLoad = async () => {
 	const sacMembersFetch = await fetch(getStaticFile('json/sacMembers.json'));
 	const slcMembersFetch = await fetch(getStaticFile('json/slcMembers.json'));
 	const sloMembersFetch = await fetch(getStaticFile('json/sloMembers.json'));
-	
+
 	const sacMembers = await sacMembersFetch.json();
 	const slcMembers = await slcMembersFetch.json();
 	const sloMembers = await sloMembersFetch.json();
@@ -35,17 +35,17 @@ export const load: PageServerLoad = async () => {
 			}
 		});
 		const image = getFile(userMeta.img);
-		if(image == null){
+		if (image == null) {
 			sacMembers[i]['imagesrc'] = 'https://avatar.iran.liara.run/public/30';
 		}
-		else{
+		else {
 			sacMembers[i]['imagesrc'] = image;
 		}
 		sacMembers[i]['data'] = userProfile;
 		sacMembers[i]['firstname'] = userProfile.firstName;
 		sacMembers[i]['lastname'] = userProfile.lastName;
-		for(let j = 0; j < sacMembers[i].roles.length; j++) {
-			if(sacMembers[i].roles[j].endYear == null){
+		for (let j = 0; j < sacMembers[i].roles.length; j++) {
+			if (sacMembers[i].roles[j].endYear == null) {
 				sacMembers[i].roles[j].endYear = "present";
 			}
 		}
@@ -58,7 +58,7 @@ export const load: PageServerLoad = async () => {
 			}
 		});
 		const image = getFile(userMeta.img);
-		if(image == null){
+		if (image == null) {
 			slcMembers[i]['imagesrc'] = 'https://avatar.iran.liara.run/public/30';
 		}
 		else {
@@ -66,8 +66,8 @@ export const load: PageServerLoad = async () => {
 		}
 		slcMembers[i]['firstname'] = userProfile.firstName;
 		slcMembers[i]['lastname'] = userProfile.lastName;
-		for(let j = 0; j < slcMembers[i].roles.length; j++) {
-			if(slcMembers[i].roles[j].endYear == null){
+		for (let j = 0; j < slcMembers[i].roles.length; j++) {
+			if (slcMembers[i].roles[j].endYear == null) {
 				slcMembers[i].roles[j].endYear = "present";
 			}
 		}
@@ -80,16 +80,16 @@ export const load: PageServerLoad = async () => {
 			}
 		});
 		const image = getFile(userMeta.img);
-		if(image == null){
+		if (image == null) {
 			sloMembers[i]['imagesrc'] = 'https://avatar.iran.liara.run/public/30';
 		}
-		else{
+		else {
 			sloMembers[i]['imagesrc'] = image;
 		}
 		sloMembers[i]['firstname'] = userProfile.firstName;
 		sloMembers[i]['lastname'] = userProfile.lastName;
-		for(let j = 0; j < sloMembers[i].roles.length; j++) {
-			if(sloMembers[i].roles[j].endYear == null){
+		for (let j = 0; j < sloMembers[i].roles.length; j++) {
+			if (sloMembers[i].roles[j].endYear == null) {
 				sloMembers[i].roles[j].endYear = "present";
 			}
 		}

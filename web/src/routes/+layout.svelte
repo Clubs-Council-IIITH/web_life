@@ -96,12 +96,24 @@
 	</svelte:fragment>
 	<svelte:fragment slot="pageFooter">
 		<div>
-			<hr/>
+			<hr />
 			<br />
 			<ul class="inline-list-footer">
-				<li><p>© 2021-{currentYear}, <a href="https://iiit.ac.in" target="_blank"><u>IIIT Hyderabad</u></a></p></li>
 				<li>
-					<p>Made Developed & Maintained with ❤️ by <a href="https://slc-tech.iiit.ac.in/about" target="_blank"><u>SLC Tech Team</u></a> (powered by <a href="https://clubs.iiit.ac.in/" target="_blank"><u>Clubs Council</u></a>)</p>
+					<p>
+						© 2021-{currentYear},
+						<a href="https://iiit.ac.in" target="_blank"><u>IIIT Hyderabad</u></a>
+					</p>
+				</li>
+				<li>
+					<p>
+						Made Developed & Maintained with ❤️ by <a
+							href="https://slc-tech.iiit.ac.in/about"
+							target="_blank"><u>SLC Tech Team</u></a
+						>
+						(powered by
+						<a href="https://clubs.iiit.ac.in/" target="_blank"><u>Clubs Council</u></a>)
+					</p>
 				</li>
 			</ul>
 		</div>

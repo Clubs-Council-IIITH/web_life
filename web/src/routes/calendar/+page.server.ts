@@ -17,7 +17,7 @@ function eventDataTransform(event: any) {
 			url: `/events/${event._id}`,
 			display: 'block'
 		};
-	} 
+	}
 	else {
 		return {
 			id: event._id,
@@ -34,9 +34,9 @@ export const load: PageServerLoad = async () => {
 	const { data: { events } = {} } = await getClient().query(GET_ALL_EVENTS, {
 		clubid: null,
 		public: false
-	});		
-	let final_events = events?.filter((event:any) => event?.status?.state !== "deleted")
-	
+	});
+	let final_events = events?.filter((event: any) => event?.status?.state !== "deleted")
+
 	return {
 		page_server_data: {
 			events: final_events
