@@ -39,6 +39,7 @@
 		<h2 class="h2">Events</h2>
 	</div>
 	<div id="calendar" class="calendar"></div>
+	<br />
 </div>
 
 <style lang="postcss">
