@@ -9,9 +9,9 @@
 		<br />
 		<h2  class="h2">Student Affairs Committe (SAC)</h2>
 		<br /> 
-		<h3 class="h3">Members</h3>
+		<h3 style="margin-top:15px;margin-bottom:10px" class="h3">Members</h3>
 		<br />
-		<div style="margin:10px" class="avatar-grid mx-4">
+		<div style="margin-top:10px" class="avatar-grid mx-4">
 			{#each data.page_server_data.sac as member}
 				<!-- <a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card"> -->
 				<div class="w-full max-w-s rounded-lg card">
@@ -41,9 +41,9 @@
 		<br/>
 		<h2 style="margin-top: 30px" class="h2">Student Life Committe (SLC)</h2>
 		<br />
-		<h3 style="margin-top:10px" class="h3">What do we do?</h3>
+		<h3 style="margin-top:15px" class="h3">What do we do?</h3>
 		<br />
-		<p style="margin-top:10px">
+		<p style="margin-top:15px">
 			The Student Life Comittee is dedicated to enhancing the overall student experience and
 			fostering a vibrant and inclusive campus community. We believe that student life is an
 			integral part of a well-rounded education, and we strive to create opportunities for personal
@@ -56,7 +56,7 @@
 			lasting friendships, and make a positive impact on campus.
 		</p>
 		<br />
-		<h3 style="margin:15px" class="h3">Members</h3>
+		<h3 style="margin-top:15px;margin-bottom:15px" class="h3">Members</h3>
 		<br />
 		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.slc as member}
@@ -89,9 +89,9 @@
 		<br />
 		<h2 style="margin-top:30px" class="h2">Student Life Office (SLO)</h2>
 		<br />
-		<h3 style="margin-top:10px" class="h3">What do we do?</h3>
+		<h3 style="margin-top:15px" class="h3">What do we do?</h3>
 		<br />
-		<p style="margin-top:10px">
+		<p style="margin-top:15px">
 			Our mission is to enhance the overall student experience and promote a vibrant campus
 			community. We are dedicated to encouraging an equitable balance between academics and
 			extra-curricular activities for all students across campus and empowering students throughout
@@ -104,7 +104,7 @@
 			a variety of programs and initiatives designed to enrich your student life experience.
 		</p>
 		<br />
-		<h3 style="margin:15px" class="h3">Members</h3>
+		<h3 style="margin-top:15px;margin-bottom:15px" class="h3">Members</h3>
 		<br />
 		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.slo as member}
