@@ -190,9 +190,7 @@
 					©{currentYear}, IIIT Hyderabad
 				</p>
 				<p>
-					<a href="https://help.iiit.ac.in/projects/web-administration/issues/new" target="_blank"
-						><b>Report Bugs</b></a
-					>
+					<a href="https://clubs.iiit.ac.in/bug-report"><b>Report Bugs</b></a>
 				</p>
 			</div>
 		</div>
