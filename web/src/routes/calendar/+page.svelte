@@ -43,7 +43,7 @@
 	class="container h-full w-full mx-auto flex justify-center items-center flex-col"
 	style="padding-bottom:4%;"
 >
-	<div class="text-center flex flex-col items-center" style="padding-top:2%;">
+	<div class="text-center flex flex-col items-center" style="padding-top:2%;padding-bottom:2%;">
 		<br />
 		<h2 class="h2">Calendar</h2>
 	</div>
