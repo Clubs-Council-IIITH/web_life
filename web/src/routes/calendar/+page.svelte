@@ -26,17 +26,26 @@
 				initialView: 'dayGridMonth',
 				dayMaxEvents: true,
 				events: data.page_server_data,
-				eventDataTransform: eventDataTransform
+				eventDataTransform: eventDataTransform,
+				eventClick: function(event: any) {
+					if (event.event.url) {
+					event.jsEvent.preventDefault();
+					window.open(event.event.url, "_blank");
+					}
+				}
 			});
 			calendar.render();
 		}
 	});
 </script>
 
-<div class="container h-full w-full mx-auto flex justify-center items-center flex-col" style="padding-bottom:4%;">
+<div
+	class="container h-full w-full mx-auto flex justify-center items-center flex-col"
+	style="padding-bottom:4%;"
+>
 	<div class="text-center flex flex-col items-center" style="padding-top:2%;">
-		<br/>
-		<h2 class="h2">Events</h2>
+		<br />
+		<h2 class="h2">Calendar</h2>
 	</div>
 	<div id="calendar" class="calendar"></div>
 	<br />
