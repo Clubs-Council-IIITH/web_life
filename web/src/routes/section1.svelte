@@ -12,7 +12,7 @@
             <div class="col-lg-6 col-md-8 wrap text-white">
                 <div class="title__block">
                     <h1 class="mbr-section-title mbr-bold mbr-fonts-style display-1">WELCOME TO LIFE OF IIIT-H</h1>
-                    <p class="mbr-text mbr-fonts-style display-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quos harum nulla nesciunt aspernatur.</p>
+                    <p class="mbr-text mbr-fonts-style display-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quos harum .</p>
                 </div>
             </div>
         </div>
