@@ -22,7 +22,7 @@ export const load: PageServerLoad = async () => {
 	const { data: { activeClubs } = {} } = await getClient().query(GET_ACTIVE_CLUBS, {});
 	const cc = {
 		cid: 'clubs',
-		name: 'Clubs Council',
+		name: 'Clubs Council (Umbrella Body of Clubs)',
 		logo: getStaticFile('img/cc-logo.png'),
 		banner: getStaticFile('img/cc-banner.png'),
 		tagline: "Let's make college life fun!",

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { Avatar } from '@skeletonlabs/skeleton';
-	let currentVariant = 'bg-initial';
+	// let currentVariant = 'bg-initial';
 
 	export let data: PageData;
 </script>
@@ -34,9 +33,9 @@
 								alt="Club Logo"
 							/>
 							<div class="ml-2">
-								<h3 class="font-bold">{studentbody.name}</h3>
+								<h3 class="font-bold mr-2">{studentbody.name}</h3>
 								{#if studentbody.tagline}
-									<p>{studentbody.tagline}</p>
+									<p class="mr-2">{studentbody.tagline}</p>
 								{/if}
 							</div>
 						</div>
