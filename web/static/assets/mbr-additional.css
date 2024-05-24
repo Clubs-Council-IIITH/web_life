@@ -1111,8 +1111,8 @@ blockquote {
 }
 
 .dark .cid-rRIjJzt6Us{
-  padding-top: 5rem;
-  padding-bottom: 0rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: black;
 }
 .cid-rRIjJzt6Us .title__block{
@@ -1169,10 +1169,11 @@ blockquote {
     width:100vw;
   }
 }
-.cid-rRIjJzt6Us .content__block {
+.dark .cid-rRIjJzt6Us .content__block {
   /* min-width: 1200px; */
   /* transform: translateX(0); */
   /* padding-top:5%; */
+  /* padding-top:0%; */
 }
 @media  screen and (max-width:600px) {
   .cid-rRIjJzt6Us .content__block {
