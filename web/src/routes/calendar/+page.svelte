@@ -33,8 +33,8 @@
 	});
 </script>
 
-<div class="container h-full w-full mx-auto flex justify-center items-center flex-col">
-	<div class="text-center flex flex-col items-center">
+<div class="container h-full w-full mx-auto flex justify-center items-center flex-col" style="padding-bottom:4%;">
+	<div class="text-center flex flex-col items-center" style="padding-top:2%;">
 		<br/>
 		<h2 class="h2">Events</h2>
 	</div>

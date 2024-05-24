@@ -7,7 +7,9 @@
 		desc?: string;
 		title?: string;
 	}
-
+	import Header4 from './section1.svelte'
+	import Features6 from './section2.svelte'
+	import Features12 from './section3.svelte'
 	// let carousel: HTMLElement;
 	// let currentIndex = 0;
 	// let direction = 1;
@@ -87,12 +89,18 @@
 	}
 </script>
 
-<div class="container h-full mx-auto justify-center items-center">
+<!-- <div class="container h-full mx-auto justify-center items-center">
 	<div class="text-center flex flex-col items-center">
 		<br />
 		<h2 class="h2">Welcome to Life@IIIT-H</h2>
-		<br />
-
+		<br /> -->
+		<Header4/>
+		<br/>
+		<br/>
+		<Features6/>
+		<br/>
+		<br/>
+		<Features12/>
 		<!-- <div
 			bind:this={carousel}
 			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto carousel"
@@ -112,10 +120,10 @@
 				</div>
 			{/each}
 		</div> -->
-	</div>
-	<Carousel {images} duration={3000}>
-	</Carousel>
-</div>
+	<!-- </div> -->
+	<!-- <Carousel {images} duration={3000}>
+	</Carousel> -->
+<!-- </div> -->
 
 <!-- <style lang="postcss">
 	.carousel {

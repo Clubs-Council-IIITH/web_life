@@ -8,11 +8,11 @@
 
 <div class="container h-full w-full mx-auto flex justify-center items-center flex-col">
 	<br />
-	<div class="text-center flex flex-col items-center">
+	<div class="text-center flex flex-col items-center" style="padding-top:2%; padding-bottom:2%;">
 		<h2 class="h2">Student Bodies</h2>
 	</div>
 	<br />
-	<div class="mx-4">
+	<div class="mx-4" style="padding-bottom:3%;">
 		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 			{#each data.page_server_data.clubs as studentbody}
 				<a

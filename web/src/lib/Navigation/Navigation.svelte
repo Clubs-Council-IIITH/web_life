@@ -14,6 +14,8 @@
 		<li><a href="/committee" on:click={drawerClose}>Committee</a></li>
 		<li><a href="/student-bodies" on:click={drawerClose}>Student Bodies</a></li>
 		<li><a href="/calendar" on:click={drawerClose}>Calendar</a></li>
-		<LightSwitch />
+		<li style="padding-left:3%;"><LightSwitch /></li>
 	</ul>
 </nav>
+
+

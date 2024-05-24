@@ -59,7 +59,7 @@
 
 <!-- App Shell -->
 <Drawer>
-	<h2 class="p-4">Navigation</h2>
+	<h2 class="p-4 navclass">Navigation</h2>
 	<hr />
 	<Navigation />
 </Drawer>
@@ -92,7 +92,7 @@
 								>
 							</li>
 							<li><a class="btn btn-sm variant-ghost-surface" href="/calendar"> Calendar </a></li>
-							<li><LightSwitch /></li>
+							<li style="padding-top:2%;"><LightSwitch /></li>
 						</ul>
 					</div>
 				</svelte:fragment>
@@ -108,7 +108,7 @@
 				<img src={imgSrc} alt="Life@IIIT Hyderabad Logo" class="h-12 logo" />
 			</div>
 			<br />
-			<div class="footer-social">
+			<div class="footer-social" style="color: {$modeCurrent? 'black':'white'}">
 				<a href="https://iiit.ac.in/" target="_blank">
 					<svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" {...$$props}>
 						<path fill="currentColor" d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2" />
@@ -131,7 +131,7 @@
 				</a>
 			</div>
 			<br />
-			<ul class="inline-list-footer">
+			<ul class="inline-list-footer" style="color: {$modeCurrent? 'black':'white'}">
 				<li>
 					<p>
 						Developed & Maintained with ❤️ by SLC Tech Team (powered by <a href="https://clubs.iiit.ac.in/" target="_blank">Clubs Council</a>)
@@ -139,7 +139,7 @@
 				</li>
 			</ul>
 			<br />
-			<div class="footer_bottom">
+			<div class="footer_bottom" style="color: {$modeCurrent? 'black':'white'}">
 				<p>
 					<a href="https://www.iiit.ac.in/privacy-policy/" target="_blank"><b>Privacy Policy</b></a>
 				</p>
@@ -157,6 +157,7 @@
 </AppShell>
 
 <style lange="postcss">
+	
 	hr {
 		border: none;
 		height: 2px;
@@ -210,6 +211,7 @@
 		background-color: var(--surface);
 		color: var(--on-surface);
 		padding: 20px;
+		padding-top:0px;
 	}
 	@media (max-width: 1024px) {
 		.inline-list {
