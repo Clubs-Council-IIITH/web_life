@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Avatar } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
+	// import { Avatar } from '@skeletonlabs/skeleton';
+	// import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	export let data: PageData;
 </script>
@@ -60,11 +60,12 @@
 		<br />
 		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.slc as member}
-				<a
+				<!-- <a
 					href={'https://clubs.iiit.ac.in/profile/' + member.uid}
 					target="_blank"
 					class="w-full max-w-s rounded-lg card"
-				>
+				> -->
+				<div class="w-full max-w-s rounded-lg card">
 					<br />
 					<div style="margin:15px" class="flex flex-col items-center pb-10">
 						<img
@@ -83,7 +84,8 @@
 							</div>
 						{/each}
 					</div>
-				</a>
+				</div>
+				<!-- </a> -->
 			{/each}
 		</div>
 		<br />
@@ -108,11 +110,12 @@
 		<br />
 		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.slo as member}
-				<a
+				<!-- <a
 					href={'https://clubs.iiit.ac.in/profile/' + member.uid}
 					target="_blank"
 					class="w-full max-w-s rounded-lg card"
-				>
+				> -->
+				<div class="w-full max-w-s rounded-lg card">
 					<br />
 					<div style="margin:15px" class="flex flex-col items-center pb-10">
 						<img
@@ -131,7 +134,8 @@
 							</div>
 						{/each}
 					</div>
-				</a>
+				</div>
+				<!-- </a> -->
 			{/each}
 		</div>
 		<br />
