@@ -174,10 +174,10 @@
 			<ul class="inline-list-footer" style="color: {$modeCurrent ? 'black' : 'white'}">
 				<li>
 					<p>
-						Developed & Maintained with ❤️ by SLC Tech Team (powered by <a
-							href="https://clubs.iiit.ac.in/"
-							target="_blank">Clubs Council</a
-						>)
+						Developed & Maintained with ❤️ by <a
+							href="https://clubs.iiit.ac.in/about/clubs-council/tech-members"
+							target="_blank">SLC Tech Team</a
+						> (powered by Clubs Council)
 					</p>
 				</li>
 			</ul>
@@ -187,7 +187,7 @@
 					<a href="https://www.iiit.ac.in/privacy-policy/" target="_blank"><b>Privacy Policy</b></a>
 				</p>
 				<p>
-					©2021-{currentYear}, IIIT Hyderabad
+					©{currentYear}, IIIT Hyderabad
 				</p>
 				<p>
 					<a href="https://help.iiit.ac.in/projects/web-administration/issues/new" target="_blank"
