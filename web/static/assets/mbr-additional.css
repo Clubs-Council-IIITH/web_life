@@ -1029,7 +1029,7 @@ blockquote {
   overflow: hidden;
   padding-top: 10rem;
   padding-bottom: 10rem;
-  background-image: url("../carousel/1.jpg");
+  background-image: url("../gallery/1.jpg");
 }
 .cid-rRIkbRb1Do .container {
   margin: 0 auto;
@@ -1332,7 +1332,7 @@ blockquote {
   }
 }
 .cid-rRIjJzt6Us .minwidth {
-  /* background-image: url("../carousel/1.jpg"); */
+  /* background-image: url("../gallery/1.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

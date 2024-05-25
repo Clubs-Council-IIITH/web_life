@@ -80,7 +80,7 @@
 	let images: ExtendedImgAttributes[] = [];
 	for(let i = 0; i < description.length; i++) {
 		images.push({
-			src: `${base}/carousel/${i + 1}.jpg`,
+			src: `${base}/gallery/${i + 1}.jpg`,
 			alt: 'iiit-h',
 			draggable: false,
 			desc: description[i].desc,
@@ -104,7 +104,7 @@
 			{#each Array.from({ length: 8 }) as _, i}
 				<div class="snap-align-start shrink-0 card text-center carousel-content">
 					<img
-						src="{base}/carousel/{i + 1}.jpg"
+						src="{base}/gallery/{i + 1}.jpg"
 						alt="iiit-h"
 						class="carousel-image"
 						draggable="false"
