@@ -52,6 +52,7 @@
     "graphql-tag": "^2.12.6",
     "highlight.js": "11.9.0",
     "string-to-color": "^2.2.2",
+    "svelte-grid-responsive": "^1.2.4",
     "urql": "^4.0.7"
   }
 }

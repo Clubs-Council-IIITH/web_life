@@ -7,9 +7,9 @@
 		desc?: string;
 		title?: string;
 	}
-	
-	import Features6 from './section2.svelte'
-	
+
+	import Features6 from './section1.svelte';
+
 	// let carousel: HTMLElement;
 	// let currentIndex = 0;
 	// let direction = 1;
@@ -37,48 +37,48 @@
 
 	let description = [
 		{
-			'title': 'Life at IIIT',
-			'desc': 'Eat. Sleep. Code? Not Quite.'
+			title: 'Life at IIIT',
+			desc: 'Eat. Sleep. Code? Not Quite.'
 		},
 		{
-			'title': 'Clubs at IIIT',
-			'desc': 'Explore your student life beyond the classroom.'
+			title: 'Clubs at IIIT',
+			desc: 'Explore your student life beyond the classroom.'
 		},
 		{
-			'title': 'Unrestricted Fun!',
-			'desc': 'Join in on fun events!'
+			title: 'Unrestricted Fun!',
+			desc: 'Join in on fun events!'
 		},
 		{
-			'title': 'Connect IIIT',
-			'desc': 'Come together to learn, work, live and play.'
+			title: 'Connect IIIT',
+			desc: 'Come together to learn, work, live and play.'
 		},
 		{
-			'title': 'Success Stories',
-			'desc': 'Witness legends in the making.'
+			title: 'Success Stories',
+			desc: 'Witness legends in the making.'
 		},
 		{
-			'title': 'Experience IIIT',
-			'desc': 'Expand your mind, explore your passion.'
+			title: 'Experience IIIT',
+			desc: 'Expand your mind, explore your passion.'
 		},
 		{
-			'title': 'Challengers',
-			'desc': 'Up the potential for fun.'
+			title: 'Challengers',
+			desc: 'Up the potential for fun.'
 		},
 		{
-			'title': 'Perform together',
-			'desc': 'Let the beat take over.'
+			title: 'Perform together',
+			desc: 'Let the beat take over.'
 		},
 		{
-			'title': 'Artistry',
-			'desc': 'Unleash your creativity.'
+			title: 'Artistry',
+			desc: 'Unleash your creativity.'
 		},
 		{
-			'title': 'Campus Life',
-			'desc': 'A vibrant residential community.'
+			title: 'Campus Life',
+			desc: 'A vibrant residential community.'
 		}
-	]
+	];
 	let images: ExtendedImgAttributes[] = [];
-	for(let i = 0; i < description.length; i++) {
+	for (let i = 0; i < description.length; i++) {
 		images.push({
 			src: `${base}/gallery/${i + 1}.jpg`,
 			alt: 'iiit-h',
@@ -94,10 +94,10 @@
 		<br />
 		<h2 class="h2">Welcome to Life@IIIT-H</h2>
 		<br /> -->
-		
-		<Features6/>
-		
-		<!-- <div
+
+<Features6 />
+
+<!-- <div
 			bind:this={carousel}
 			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto carousel"
 		>
@@ -116,8 +116,8 @@
 				</div>
 			{/each}
 		</div> -->
-	<!-- </div> -->
-	<!-- <Carousel {images} duration={3000}>
+<!-- </div> -->
+<!-- <Carousel {images} duration={3000}>
 	</Carousel> -->
 <!-- </div> -->
 

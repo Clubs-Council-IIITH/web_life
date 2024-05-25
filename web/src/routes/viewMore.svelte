@@ -5,8 +5,8 @@
 </script>
 
 <div class="vmbtn">
-	<a style="font-size: 20px; margin-left:5%" tabindex="0" href="/gallery"
-		><span class="MuiTypography-root MuiTypography-button mui-96266l">View all</span><svg
+	<a style="font-size: 20px" tabindex="0" href="/gallery"
+		><span class="MuiTypography-root MuiTypography-button mui-96266l" style="font-size: 18px;">View all Images</span><svg
 			xmlns="http://www.w3.org/2000/svg"
 			xmlns:xlink="http://www.w3.org/1999/xlink"
 			aria-hidden="true"
@@ -15,16 +15,18 @@
 			width="1em"
 			height="1em"
 			viewBox="0 0 24 24"
-			 style="display: inline;"><path fill="currentColor" d="M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z"></path></svg
+			style="display: inline;"
+		>
+			<path fill="currentColor" d="M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z"></path></svg
 		><span class="MuiTouchRipple-root mui-w0pj6f"></span></a
 	>
 </div>
 
 <style>
-  .vmbtn{
-    display: flex;
-    padding-left:5%;
-    color:blue;
-  }
-  
+	.vmbtn {
+		display: flex;
+		justify-content: flex-end;
+		color: blue;
+	}
 </style>
+
