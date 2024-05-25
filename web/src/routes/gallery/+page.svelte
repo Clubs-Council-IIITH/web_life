@@ -1,14 +1,26 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { base } from '$app/paths';
-	import Carousel from '$lib/carousel/Carousel.svelte';
-	import type { HTMLImgAttributes } from 'svelte/elements';
-	interface ExtendedImgAttributes extends HTMLImgAttributes {
-		desc?: string;
-		title?: string;
+	import Features6 from './section1.svelte';
+
+	import { modeCurrent } from '@skeletonlabs/skeleton';
+
+	let color: string;
+
+	$: {
+		if ($modeCurrent == false) {
+			color = 'lightgrey';
+		} else {
+			color = 'slateblue';
+		}
 	}
 
-	import Features6 from './section1.svelte';
+	// import { onMount } from 'svelte';
+	// import { base } from '$app/paths';
+	// import Carousel from '$lib/carousel/Carousel.svelte';
+	// import type { HTMLImgAttributes } from 'svelte/elements';
+	// interface ExtendedImgAttributes extends HTMLImgAttributes {
+	// 	desc?: string;
+	// 	title?: string;
+	// }
 
 	// let carousel: HTMLElement;
 	// let currentIndex = 0;
@@ -35,65 +47,59 @@
 	// 	return () => clearInterval(intervalId); // Clear the interval when the component is destroyed
 	// });
 
-	let description = [
-		{
-			title: 'Life at IIIT',
-			desc: 'Eat. Sleep. Code? Not Quite.'
-		},
-		{
-			title: 'Clubs at IIIT',
-			desc: 'Explore your student life beyond the classroom.'
-		},
-		{
-			title: 'Unrestricted Fun!',
-			desc: 'Join in on fun events!'
-		},
-		{
-			title: 'Connect IIIT',
-			desc: 'Come together to learn, work, live and play.'
-		},
-		{
-			title: 'Success Stories',
-			desc: 'Witness legends in the making.'
-		},
-		{
-			title: 'Experience IIIT',
-			desc: 'Expand your mind, explore your passion.'
-		},
-		{
-			title: 'Challengers',
-			desc: 'Up the potential for fun.'
-		},
-		{
-			title: 'Perform together',
-			desc: 'Let the beat take over.'
-		},
-		{
-			title: 'Artistry',
-			desc: 'Unleash your creativity.'
-		},
-		{
-			title: 'Campus Life',
-			desc: 'A vibrant residential community.'
-		}
-	];
-	let images: ExtendedImgAttributes[] = [];
-	for (let i = 0; i < description.length; i++) {
-		images.push({
-			src: `${base}/gallery/${i + 1}.jpg`,
-			alt: 'iiit-h',
-			draggable: false,
-			desc: description[i].desc,
-			title: description[i].title
-		});
-	}
+	// let description = [
+	// 	{
+	// 		title: 'Life at IIIT',
+	// 		desc: 'Eat. Sleep. Code? Not Quite.'
+	// 	},
+	// 	{
+	// 		title: 'Clubs at IIIT',
+	// 		desc: 'Explore your student life beyond the classroom.'
+	// 	},
+	// 	{
+	// 		title: 'Unrestricted Fun!',
+	// 		desc: 'Join in on fun events!'
+	// 	},
+	// 	{
+	// 		title: 'Connect IIIT',
+	// 		desc: 'Come together to learn, work, live and play.'
+	// 	},
+	// 	{
+	// 		title: 'Success Stories',
+	// 		desc: 'Witness legends in the making.'
+	// 	},
+	// 	{
+	// 		title: 'Experience IIIT',
+	// 		desc: 'Expand your mind, explore your passion.'
+	// 	},
+	// 	{
+	// 		title: 'Challengers',
+	// 		desc: 'Up the potential for fun.'
+	// 	},
+	// 	{
+	// 		title: 'Perform together',
+	// 		desc: 'Let the beat take over.'
+	// 	},
+	// 	{
+	// 		title: 'Artistry',
+	// 		desc: 'Unleash your creativity.'
+	// 	},
+	// 	{
+	// 		title: 'Campus Life',
+	// 		desc: 'A vibrant residential community.'
+	// 	}
+	// ];
+	// let images: ExtendedImgAttributes[] = [];
+	// for (let i = 0; i < description.length; i++) {
+	// 	images.push({
+	// 		src: `${base}/gallery/${i + 1}.jpg`,
+	// 		alt: 'iiit-h',
+	// 		draggable: false,
+	// 		desc: description[i].desc,
+	// 		title: description[i].title
+	// 	});
+	// }
 </script>
-
-<!-- <div class="container h-full mx-auto justify-center items-center">
-	<div class="text-center flex flex-col items-center">
-		<br />
-		<h2 class="h2">Welcome to Life@IIIT-H</h2>
-		<br /> -->
 
 <Features6 />
 

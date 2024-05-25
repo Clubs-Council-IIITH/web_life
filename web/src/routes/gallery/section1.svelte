@@ -17,14 +17,14 @@
 	images.sort(() => Math.random() - 0.5);
 </script>
 
-<section class="features6" id="features6-h">
+<section class="features6 cid-rRIjJzt6Us" id="features6-h">
 	<div class="center">
 		<center><h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5">Gallery</h2></center>
 	</div>
 	<div class="mx-4 mb-5">
 		<Grid container gutter={20}>
 			{#each images as image}
-				<Grid xs={12} md={4} lg={3}>
+				<Grid xs={12} md={6} lg={4}>
 					<div class="parallax__image">
 						<div class="image">
 							<img src={image.src} alt={image.alt} title="" />

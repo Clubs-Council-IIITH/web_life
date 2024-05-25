@@ -1,12 +1,26 @@
-<script>
+<script lang="ts">
+	import { modeCurrent } from '@skeletonlabs/skeleton';
+
+	let color: string;
+
+	$: {
+		if ($modeCurrent == false) {
+			color = 'lightgrey';
+		} else {
+			color = 'slateblue';
+		}
+	}
+
 	function openLocalPage() {
 		window.open('/gallery', '_self'); // Change '_self' to '_blank' if you want to open in a new tab
 	}
 </script>
 
-<div class="vmbtn">
+<div class="vmbtn" style={`color: ${color}`}>
 	<a style="font-size: 20px" tabindex="0" href="/gallery"
-		><span class="MuiTypography-root MuiTypography-button mui-96266l" style="font-size: 18px;">View all Images</span><svg
+		><span class="MuiTypography-root MuiTypography-button mui-96266l" style="font-size: 18px;"
+			>View all Images</span
+		><svg
 			xmlns="http://www.w3.org/2000/svg"
 			xmlns:xlink="http://www.w3.org/1999/xlink"
 			aria-hidden="true"
@@ -26,7 +40,5 @@
 	.vmbtn {
 		display: flex;
 		justify-content: flex-end;
-		color: blue;
 	}
 </style>
-
