@@ -3,13 +3,16 @@
 	import { base } from '$app/paths';
 	import Carousel from '$lib/carousel/Carousel.svelte';
 	import type { HTMLImgAttributes } from 'svelte/elements';
+	import type { PageData } from './$types';
 	interface ExtendedImgAttributes extends HTMLImgAttributes {
 		desc?: string;
 		title?: string;
 	}
-	import Header4 from './section1.svelte';
-	import Features6 from './section2.svelte';
-	import Features12 from './section3.svelte';
+	import Header4 from "$lib/components/section1.svelte";
+	import Features6 from '$lib/components/section2.svelte';
+	import Features12 from '$lib/components/section3.svelte';
+
+	export let data: PageData;
 	// let carousel: HTMLElement;
 	// let currentIndex = 0;
 	// let direction = 1;
@@ -100,7 +103,7 @@
 <Features6 />
 <br />
 <br />
-<Features12 />
+<Features12 data={{ page_server_data: data.page_server_data }} />
 <!-- <div
 			bind:this={carousel}
 			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto carousel"
