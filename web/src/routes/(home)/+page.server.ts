@@ -91,7 +91,6 @@ export const load: PageServerLoad = async () => {
 			top_five_events[i].image = top_five_events[i].club_logo
 		}
 	}
-	console.log(top_five_events)
 	return {
 		page_server_data: {
 			events: final_events

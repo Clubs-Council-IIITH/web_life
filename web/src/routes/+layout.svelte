@@ -95,6 +95,7 @@
 								<a class="btn btn-sm variant-ghost-surface" href="/student-bodies">Student Bodies</a
 								>
 							</li>
+							<li><a class="btn btn-sm variant-ghost-surface" href="/gallery"> Gallery </a></li>
 							<li><a class="btn btn-sm variant-ghost-surface" href="/calendar"> Calendar </a></li>
 							<li style="padding-top:2%;"><LightSwitch /></li>
 						</ul>
