@@ -12,7 +12,7 @@
 	</div>
 	<br />
 	<p class="mx-4" style="margin-bottom:15px">
-		IIIT H is difficult, but rewarding and it is our deepest desire to set our student leaders, as
+		IIIT -H is difficult, but rewarding and it is our deepest desire to set our student leaders, as
 		well as current and future groups up for success. The student bodies at IIIT Hyderabad are run
 		by the students, for the students. While the Parliament represents the student community and
 		liaises with the administration, the Entrepreneurship Cell fosters innovation and business

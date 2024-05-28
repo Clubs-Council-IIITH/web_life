@@ -12,18 +12,71 @@
 		<br />
 		<h3 style="margin-top:15px" class="h3">What do we do?</h3>
 		<br />
-		<p style="margin-top:15px">
+		<p style="margin-top: 5px">
 			The purpose of the Student Affairs Committee is to promote and maintain the welfare of the
 			student body and effective and desirable faculty-student relations. Its functions are to
 			recommend policies and procedures as necessary and proper to accomplish its purpose and to
 			develop the annual student activity budget as submitted to the Board.
 		</p>
 		<br />
-		<h3 style="margin-top:15px;margin-bottom:10px" class="h3">Members</h3>
+		<h3 style="margin-top: 15px; margin-bottom: 5px" class="h3">Members</h3>
 		<br />
-		<div style="margin-top:10px" class="avatar-grid mx-4">
+		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.sac as member}
 				<!-- <a href={'https://clubs.iiit.ac.in/profile/' + member.uid} target='_blank' class="w-full max-w-s rounded-lg card"> -->
+				<div class="w-full max-w-s rounded-lg card">
+					<br />
+					<div style="margin: 15px" class="flex flex-col items-center pb-10">
+						<img
+							class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover"
+							src={member.imagesrc}
+							alt={member.uid}
+						/>
+						<h5 class="mb-1 text-xl font-medium ">{member.firstname + ' ' + member.lastname}</h5>
+						<br />
+
+						<!-- Roles and Years -->
+						{#each member.roles as role}
+							<div class="flex flex-col items-center">
+								<p style="margin-x: 5px; margin-top: 6px;" class="font-bold">{role.name}</p>
+								<p style="margin: 2px; font-size: 14px" class="text-gray-500">
+									( {role.startYear} - {role.endYear} )
+								</p>
+							</div>
+						{/each}
+					</div>
+				</div>
+				<!-- </a> -->
+			{/each}
+		</div>
+		<br />
+		<br />
+		<h2 style="margin-top: 30px" class="h2">Student Life Committe (SLC)</h2>
+		<br />
+		<h3 style="margin-top: 15px" class="h3">What do we do?</h3>
+		<br />
+		<p style="margin-top: 5px">
+			The Student Life Comittee is dedicated to enhancing the overall student experience and
+			fostering a vibrant and inclusive campus community. We believe that student life is an
+			integral part of a well-rounded education, and we strive to create opportunities for personal
+			growth, leadership development, and meaningful connections among students.
+			<br />
+			Our committee consists of passionate student representatives who work closely with faculty, staff,
+			and the wider student body to organize and coordinate a wide range of events, programs, and initiatives.
+			From social gatherings and cultural celebrations to educational workshops and community service
+			projects, we aim to provide diverse opportunities for students to explore their interests, build
+			lasting friendships, and make a positive impact on campus.
+		</p>
+		<br />
+		<h3 style="margin-top: 15px; margin-bottom: 5px" class="h3">Members</h3>
+		<br />
+		<div class="avatar-grid mx-4">
+			{#each data.page_server_data.slc as member}
+				<!-- <a
+					href={'https://clubs.iiit.ac.in/profile/' + member.uid}
+					target="_blank"
+					class="w-full max-w-s rounded-lg card"
+				> -->
 				<div class="w-full max-w-s rounded-lg card">
 					<br />
 					<div style="margin: 15px" class="flex flex-col items-center pb-10">
@@ -38,8 +91,8 @@
 						<!-- Roles and Years -->
 						{#each member.roles as role}
 							<div class="flex flex-col items-center">
-								<p style="margin:5px" class="font-bold">{role.name}</p>
-								<p style="margin-top:5px; font-size:14px" class="text-gray-500">
+								<p style="margin-x: 5px; margin-top: 6px;" class="font-bold">{role.name}</p>
+								<p style="margin: 2px; font-size: 14px" class="text-gray-500">
 									( {role.startYear} - {role.endYear} )
 								</p>
 							</div>
@@ -50,64 +103,11 @@
 			{/each}
 		</div>
 		<br />
+		<h2 style="margin-top: 30px" class="h2">Student Life Office (SLO)</h2>
 		<br />
-		<h2 style="margin-top: 30px" class="h2">Student Life Committe (SLC)</h2>
+		<h3 style="margin-top: 15px" class="h3">What do we do?</h3>
 		<br />
-		<h3 style="margin-top:15px" class="h3">What do we do?</h3>
-		<br />
-		<p style="margin-top:15px">
-			The Student Life Comittee is dedicated to enhancing the overall student experience and
-			fostering a vibrant and inclusive campus community. We believe that student life is an
-			integral part of a well-rounded education, and we strive to create opportunities for personal
-			growth, leadership development, and meaningful connections among students.
-			<br />
-			Our committee consists of passionate student representatives who work closely with faculty, staff,
-			and the wider student body to organize and coordinate a wide range of events, programs, and initiatives.
-			From social gatherings and cultural celebrations to educational workshops and community service
-			projects, we aim to provide diverse opportunities for students to explore their interests, build
-			lasting friendships, and make a positive impact on campus.
-		</p>
-		<br />
-		<h3 style="margin-top:15px;margin-bottom:15px" class="h3">Members</h3>
-		<br />
-		<div class="avatar-grid mx-4">
-			{#each data.page_server_data.slc as member}
-				<!-- <a
-					href={'https://clubs.iiit.ac.in/profile/' + member.uid}
-					target="_blank"
-					class="w-full max-w-s rounded-lg card"
-				> -->
-				<div class="w-full max-w-s rounded-lg card">
-					<br />
-					<div style="margin:15px" class="flex flex-col items-center pb-10">
-						<img
-							class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover"
-							src={member.imagesrc}
-							alt={member.uid}
-						/>
-						<h5 class="mb-1 text-xl font-medium">{member.firstname + ' ' + member.lastname}</h5>
-						<br />
-
-						<!-- Roles and Years -->
-						{#each member.roles as role}
-							<div class="flex flex-col items-center">
-								<p style="margin:5px" class="font-bold">{role.name}</p>
-								<p style="margin:5px; font-size:14px" class="text-gray-500">
-									( {role.startYear} - {role.endYear} )
-								</p>
-							</div>
-						{/each}
-					</div>
-				</div>
-				<!-- </a> -->
-			{/each}
-		</div>
-		<br />
-		<h2 style="margin-top:30px" class="h2">Student Life Office (SLO)</h2>
-		<br />
-		<h3 style="margin-top:15px" class="h3">What do we do?</h3>
-		<br />
-		<p style="margin-top:15px">
+		<p style="margin-top: 5px">
 			Our mission is to enhance student experience and foster excellence in the classroom and
 			beyond.We provide programs, activities, and services that enhance the development of students
 			intellectually, emotionally, culturally and physically within a co-curricular learning
@@ -118,7 +118,7 @@
 			and connects life outside the classroom to the formal academic curriculum.
 		</p>
 		<br />
-		<h3 style="margin-top:15px;margin-bottom:15px" class="h3">Members</h3>
+		<h3 style="margin-top: 15px; margin-bottom: 5px" class="h3">Members</h3>
 		<br />
 		<div class="avatar-grid mx-4">
 			{#each data.page_server_data.slo as member}
@@ -129,7 +129,7 @@
 				> -->
 				<div class="w-full max-w-s rounded-lg card">
 					<br />
-					<div style="margin:15px" class="flex flex-col items-center pb-10">
+					<div style="margin: 15px" class="flex flex-col items-center pb-10">
 						<img
 							class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover"
 							src={member.imagesrc}
@@ -141,8 +141,8 @@
 						<!-- Roles and Years -->
 						{#each member.roles as role}
 							<div class="flex flex-col items-center">
-								<p style="margin:5px" class="font-bold">{role.name}</p>
-								<p style="margin:5px; font-size:14px" class="text-gray-500">
+								<p style="margin-x: 5px; margin-top: 6px;" class="font-bold">{role.name}</p>
+								<p style="margin: 2px; font-size: 14px" class="text-gray-500">
 									( {role.startYear} - {role.endYear} )
 								</p>
 							</div>
@@ -184,5 +184,6 @@
 		font-family: 'Georgia Bold';
 		font-weight: normal;
 		font-size: 42px;
+		line-height: 50px;
 	}
 </style>

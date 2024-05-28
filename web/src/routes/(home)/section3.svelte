@@ -1,9 +1,7 @@
-<!-- Features12.svelte -->
 <script lang="ts">
 	import type { PageData } from './$types';
 	export let data: PageData;
 	let event_data = data.page_server_data['events'].slice(0, 4);
-	// console.log(event_data)
 </script>
 
 <section class="features12 cid-rRIizpy8Kq" id="features12-9">

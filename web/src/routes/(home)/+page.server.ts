@@ -49,7 +49,7 @@ export const load: PageServerLoad = async () => {
 			activeClubs[i].redirectURL = club.socials.website;
 		else
 			activeClubs[i].redirectURL = `https://clubs.iiit.ac.in/student-bodies/${activeClubs[i].cid}`;
-		
+
 		allClubs = [...allClubs, activeClubs[i]];
 		if (activeClubs[i].cid == 'ec') {
 			activeClubs[i].banner = 'https://clubs.iiit.ac.in/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2FRWxlY3Rpb24gQ29tbWlzc2lvbg%3D%3D%2F640%2F480%3Fblur%3D1&w=1920&q=75'
@@ -64,10 +64,10 @@ export const load: PageServerLoad = async () => {
 		public: true,
 	});
 	let final_events = events?.filter((event: any) => event?.status?.state !== "deleted")
-	let top_five_events = final_events.slice(0,5); 
-	for(let i = 0; i < top_five_events.length; i++){
-		for(let j = 0; j < allClubs.length; j++){
-			if(allClubs[j].cid == top_five_events[i].clubid){
+	let top_five_events = final_events.slice(0, 5);
+	for (let i = 0; i < top_five_events.length; i++) {
+		for (let j = 0; j < allClubs.length; j++) {
+			if (allClubs[j].cid == top_five_events[i].clubid) {
 				top_five_events[i]['club_logo'] = allClubs[j].logo
 			}
 		}
@@ -75,8 +75,8 @@ export const load: PageServerLoad = async () => {
 		let isoDateString = top_five_events[i].datetimeperiod[0];
 		let date = new Date(isoDateString);
 		const monthNames = [
-		"January", "February", "March", "April", "May", "June",
-		"July", "August", "September", "October", "November", "December"
+			"January", "February", "March", "April", "May", "June",
+			"July", "August", "September", "October", "November", "December"
 		];
 		let month = monthNames[date.getMonth()];
 		let day = date.getDate();
@@ -84,10 +84,10 @@ export const load: PageServerLoad = async () => {
 		let formattedDate = `${month} ${day}, ${year}`;
 		top_five_events[i]['date'] = formattedDate;
 
-		if(top_five_events[i].poster){
+		if (top_five_events[i].poster) {
 			top_five_events[i].image = getFile(top_five_events[i].poster)
 		}
-		else{
+		else {
 			top_five_events[i].image = top_five_events[i].club_logo
 		}
 	}

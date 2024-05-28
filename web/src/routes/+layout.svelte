@@ -202,6 +202,7 @@
 					<a href="https://clubs.iiit.ac.in/bug-report"><b>Report Bugs</b></a>
 				</p>
 			</div>
+			<br/>
 		</div>
 	</svelte:fragment>
 	<!-- Page Route Content -->
