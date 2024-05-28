@@ -29,7 +29,9 @@
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	let current_page = $page.url.pathname;
+	
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	//For Navigation Bar
