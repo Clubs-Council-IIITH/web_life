@@ -71,6 +71,19 @@ export const load: PageServerLoad = async () => {
 				top_five_events[i]['club_logo'] = allClubs[j].logo
 			}
 		}
+		//date string
+		let isoDateString = top_five_events[i].datetimeperiod[0];
+		let date = new Date(isoDateString);
+		const monthNames = [
+		"January", "February", "March", "April", "May", "June",
+		"July", "August", "September", "October", "November", "December"
+		];
+		let month = monthNames[date.getMonth()];
+		let day = date.getDate();
+		let year = date.getFullYear();
+		let formattedDate = `${month} ${day}, ${year}`;
+		top_five_events[i]['date'] = formattedDate;
+
 		if(top_five_events[i].poster){
 			top_five_events[i].image = getFile(top_five_events[i].poster)
 		}

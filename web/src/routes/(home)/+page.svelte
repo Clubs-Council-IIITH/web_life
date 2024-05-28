@@ -8,9 +8,9 @@
 		desc?: string;
 		title?: string;
 	}
-	import Header4 from "$lib/components/section1.svelte";
-	import Features6 from '$lib/components/section2.svelte';
-	import Features12 from '$lib/components/section3.svelte';
+	import Header4 from "./section1.svelte";
+	import Features6 from './section2.svelte';
+	import Features12 from './section3.svelte';
 
 	export let data: PageData;
 	// let carousel: HTMLElement;

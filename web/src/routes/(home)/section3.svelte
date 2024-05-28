@@ -32,7 +32,7 @@
 							</div>
 							<div class="author__post">
 								<p class="author mbr-fonts-style display-4">Posted by <strong>{event.clubid}</strong></p>
-								<p class="date mbr-fonts-style display-4">May 23, 2024</p>
+								<p class="date mbr-fonts-style display-4">Date: {event.date}</p>
 							</div>
 						</div>
 						<div class="card__content">
