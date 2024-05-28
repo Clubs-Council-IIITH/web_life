@@ -12,8 +12,8 @@
 					<div class="col-lg-3 col-md-12 col-sm-12 push" style="padding-top:12%;">
 						<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5">ABOUT US</h2>
 					</div>
-					
-					<div class="btn-vw" >
+
+					<div class="btn-vw">
 						<Vmbtn />
 					</div>
 
@@ -43,12 +43,14 @@
 
 							<!-- <div class="col-lg-3 col-md-12 col-sm-12 push title__block"> -->
 							<!-- <h3 class="mbr-section-subtitle mbr-semibold mbr-fonts-style display-4 mt-3">ABOUT US</h3> -->
-							<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5 mt-3">
-								The Felicity
-							</h2>
+							<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5 mt-3">LIFE@IIIT-H</h2>
 							<p class="mbr-text mbr-fonts-style display-4">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex accusamus sunt, amet
-								tempore omnis ullam molestiae eos reprehenderit vitae rem.
+								IIIT H is where bright, committed, innovative people congregate to learn, live, play
+								and work.Diverse in every sense of the word, our community is a fertile breeding
+								ground for opportunity in the heart of one of the leading tech hubs of the country.
+								"Work hard and play harder" is our unofficial motto and students choose their own
+								extracurricular pursuits, from a jaw dropping cauldron of ways to participate in
+								music, dance, sports, quizzes, etc.
 							</p>
 							<!-- </div> -->
 						</div>
@@ -61,8 +63,8 @@
 						<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5">ABOUT US</h2>
 					</div>
 					<div style="width:68vw">
-					<Vmbtn />
-				</div>
+						<Vmbtn />
+					</div>
 					<div class="new_content__block">
 						<div class="row new_group__content">
 							<div class="col-lg-4">
@@ -89,12 +91,14 @@
 
 							<!-- <div class="col-lg-3 col-md-12 col-sm-12 push title__block"> -->
 							<!-- <h3 class="mbr-section-subtitle mbr-semibold mbr-fonts-style display-4 mt-3">ABOUT US</h3> -->
-							<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5 mt-3">
-								The Felicity
-							</h2>
+							<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5 mt-3">LIFE@IIIT-H</h2>
 							<p class="mbr-text mbr-fonts-style display-4">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex accusamus sunt, amet
-								tempore omnis ullam molestiae eos reprehenderit vitae rem.
+								IIIT H is where bright, committed, innovative people congregate to learn, live, play
+								and work.Diverse in every sense of the word, our community is a fertile breeding
+								ground for opportunity in the heart of one of the leading tech hubs of the country.
+								"Work hard and play harder" is our unofficial motto and students choose their own
+								extracurricular pursuits, from a jaw dropping cauldron of ways to participate in
+								music, dance, sports, quizzes, etc.
 							</p>
 							<!-- </div> -->
 						</div>
@@ -179,10 +183,14 @@
 			</div>
 			<div class="col-lg-3 col-md-12 col-sm-12 push title__block">
 				<h3 class="mbr-section-subtitle mbr-semibold mbr-fonts-style display-4">ABOUT US</h3>
-				<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5">The Felicity</h2>
+				<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5">LIFE@IIIT-H</h2>
 				<p class="mbr-text mbr-fonts-style display-4">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex accusamus sunt, amet tempore
-					omnis ullam molestiae eos reprehenderit vitae rem.
+					IIIT H is where bright, committed, innovative people congregate to learn, live, play and
+					work.Diverse in every sense of the word, our community is a fertile breeding ground for
+					opportunity in the heart of one of the leading tech hubs of the country. "Work hard and
+					play harder" is our unofficial motto and students choose their own extracurricular
+					pursuits, from a jaw dropping cauldron of ways to participate in music, dance, sports,
+					quizzes, etc.
 				</p>
 			</div>
 		</div>
@@ -190,13 +198,13 @@
 </section>
 
 <style>
-	.new_content__block .mbr-section-title{
-		width:100vw;
+	.new_content__block .mbr-section-title {
+		width: 100vw;
 	}
-	
+
 	@media screen and (max-width: 600px) {
-		.minwidth .btn-vw{
-			width:80vw;
+		.minwidth .btn-vw {
+			width: 80vw;
 		}
 		.new_content__block {
 			display: flex;
@@ -212,16 +220,16 @@
 			padding-top: 5%;
 			border-radius: 20%;
 		}
-		.minwidth .mbr-section-title{
-			font-size:30px;
+		.minwidth .mbr-section-title {
+			font-size: 30px;
 		}
-		.minwidth .mbr-text{
-			font-size:15px;
+		.minwidth .mbr-text {
+			font-size: 15px;
 		}
 	}
 	@media screen and (min-width: 600px) and (max-width: 768px) {
-		.minwidth .btn-vw{
-			width:80vw;
+		.minwidth .btn-vw {
+			width: 80vw;
 		}
 		.new_content__block {
 			display: flex;
@@ -239,8 +247,8 @@
 		}
 	}
 	@media screen and (min-width: 768px) and (max-width: 853px) {
-		.minwidth .btn-vw{
-			width:80vw;
+		.minwidth .btn-vw {
+			width: 80vw;
 		}
 		.new_content__block {
 			display: flex;
@@ -258,8 +266,8 @@
 		}
 	}
 	@media screen and (min-width: 853px) and (max-width: 911px) {
-		.minwidth .btn-vw{
-			width:75vw;
+		.minwidth .btn-vw {
+			width: 75vw;
 		}
 		.new_content__block {
 			display: flex;
@@ -277,8 +285,8 @@
 		}
 	}
 	@media screen and (min-width: 912px) and (max-width: 912px) {
-		.minwidth .btn-vw{
-			width:75vw;
+		.minwidth .btn-vw {
+			width: 75vw;
 		}
 		.new_content__block {
 			display: flex;
@@ -296,8 +304,8 @@
 		}
 	}
 	@media screen and (min-width: 913px) and (max-width: 920px) {
-		.minwidth .btn-vw{
-			width:75vw;
+		.minwidth .btn-vw {
+			width: 75vw;
 		}
 		.new_content__block {
 			display: flex;
@@ -314,9 +322,9 @@
 			border-radius: 20%;
 		}
 	}
-	@media screen and (max-width: 991px) and (min-width:920px) {
-		.minwidth .btn-vw{
-			width:70vw;
+	@media screen and (max-width: 991px) and (min-width: 920px) {
+		.minwidth .btn-vw {
+			width: 70vw;
 		}
 		.new_content__block {
 			display: flex;
@@ -333,19 +341,17 @@
 			border-radius: 20%;
 		}
 	}
-	@media screen and (min-width:1024px)
-	{
-		.in-between{
-			display:none;
-		}
-	}
-	@media screen and (max-width:991px)
-	{
-		.in-between{
+	@media screen and (min-width: 1024px) {
+		.in-between {
 			display: none;
 		}
 	}
-	@media screen and (min-width:992px) and (max-width:1023px){
+	@media screen and (max-width: 991px) {
+		.in-between {
+			display: none;
+		}
+	}
+	@media screen and (min-width: 992px) and (max-width: 1023px) {
 		.new_content__block {
 			display: flex;
 			width: 100vw;
@@ -360,8 +366,8 @@
 			padding-top: 5%;
 			border-radius: 20%;
 		}
-		.in-between .mbr-section-title{
-			width:100vw;
+		.in-between .mbr-section-title {
+			width: 100vw;
 		}
 	}
 </style>

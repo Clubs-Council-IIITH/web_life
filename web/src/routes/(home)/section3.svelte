@@ -2,19 +2,22 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	export let data: PageData;
-	let event_data = data.page_server_data['events'].slice(0,4);
+	let event_data = data.page_server_data['events'].slice(0, 4);
 	// console.log(event_data)
 </script>
+
 <section class="features12 cid-rRIizpy8Kq" id="features12-9">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 col-md-6 wrap">
-				<h3 class="mbr-section-subtitle mbr-semibold mbr-fonts-style display-4">NEWS</h3>
+				<h3 class="mbr-section-subtitle mbr-semibold mbr-fonts-style display-4">Recent</h3>
 				<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5">Events &amp; News</h2>
 				<p class="mbr-text mbr-fonts-style display-4">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sed temporibus voluptatum
-					minus ipsa blanditiis doloremque odio, maiores consectetur omnis doloribus quo incidunt
-					dolore autem, modi officiis a! Praesentium, tempora.
+					Our college is awash with events that cater to a diverse range of interests and passions.
+					From academic seminars that delve deep into cutting-edge research to vibrant cultural
+					festivals, there is never a lull. With a calendar brimming with a host of myriad
+					opportunities and with students and faculty excelling in their respective fields, here are
+					some of the highlights from our recent endeavours….
 				</p>
 			</div>
 			{#each event_data as event}
@@ -25,13 +28,12 @@
 						</div>
 						<div class="card__post">
 							<div class="image__post">
-								<img
-									src={event.club_logo}
-									alt=""
-								/>
+								<img src={event.club_logo} alt="" />
 							</div>
 							<div class="author__post">
-								<p class="author mbr-fonts-style display-4">Posted by <strong>{event.clubid}</strong></p>
+								<p class="author mbr-fonts-style display-4">
+									Posted by <strong>{event.clubid}</strong>
+								</p>
 								<p class="date mbr-fonts-style display-4">Date: {event.date}</p>
 							</div>
 						</div>
