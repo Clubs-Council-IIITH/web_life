@@ -2,9 +2,19 @@
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
 	import stc from 'string-to-color';
+	import { modeCurrent } from '@skeletonlabs/skeleton';
 
 	var calendarEl;
 	export let data: PageData;
+	let color: string;
+
+	$: {
+		if ($modeCurrent == false) {
+			color = '#120b18';
+		} else {
+			color = 'snow';
+		}
+	}
 
 	function eventDataTransform(event: any) {
 		return {
@@ -47,7 +57,7 @@
 		<br />
 		<h2 class="h2">Calendar</h2>
 	</div>
-	<div id="calendar" class="calendar"></div>
+	<div id="calendar" class="calendar" style={`background-color: ${color}`}></div>
 	<br />
 </div>
 
@@ -55,8 +65,5 @@
 	.calendar {
 		width: 100%;
 		height: 100%;
-		background-color:aliceblue;
-		color: black;
 	}
-	
 </style>
