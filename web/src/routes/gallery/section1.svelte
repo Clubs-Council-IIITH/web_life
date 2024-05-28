@@ -5,7 +5,7 @@
 	import { base } from '$app/paths';
 
 	let images = [];
-	for (let i = 1; i < 45; i++) {
+	for (let i = 1; i < 48; i++) {
 		images.push({
 			src: `${base}/gallery/${i + 1}.jpg`,
 			alt: `Image ${i + 1} of IIIT-H`,
