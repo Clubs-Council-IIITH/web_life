@@ -7,3 +7,26 @@ html,
 body {
 	@apply h-full overflow-hidden;
 }
+.text-base-token {
+	color: #fff;
+}
+.text-dark-token {
+	color: #000;
+}
+.variant-filled-primary, .variant-filled-primary:hover {
+	@apply text-base-token;
+}
+
+.dark .variant-filled-primary, .dark .variant-filled-primary:hover {
+	@apply text-dark-token;
+}
+
+.dark .variant-ghost-surface:hover {
+	background-color: #E6C833;
+	color: #000;
+}
+
+.variant-ghost-surface:hover{
+	background-color: #744AA1;
+	color: #fff;
+}

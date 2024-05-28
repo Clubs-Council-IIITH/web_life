@@ -30,8 +30,11 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
-	let current_page = $page.url.pathname;
-	
+	let current_page = '';
+	page.subscribe(({ url }) => {
+        current_page = url.pathname;
+    });
+
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	//For Navigation Bar
@@ -57,6 +60,16 @@
 
 	//Current Year
 	let currentYear = new Date().getFullYear();
+
+	// function handleMouseOver(event: FocusEvent | MouseEvent) {
+	// 	(event.target as HTMLElement)?.classList.remove('variant-ghost-surface');
+	// 	(event.target as HTMLElement)?.classList.add('variant-filled-surface');
+	// }
+
+	// function handleMouseOut(event: FocusEvent | MouseEvent) {
+	// 	(event.target as HTMLElement)?.classList.remove('variant-filled-surface');
+	// 	(event.target as HTMLElement)?.classList.add('variant-ghost-surface');
+	// }
 </script>
 
 <!-- App Shell -->
@@ -87,18 +100,11 @@
 				<svelte:fragment slot="trail">
 					<div>
 						<ul class="inline-list">
-							<li><a class="btn btn-sm variant-ghost-surface" href="/"> Home </a></li>
-							<li>
-								<a class="btn btn-sm variant-ghost-surface" href="/supervisory-bodies">
-									Supervisory Bodies
-								</a>
-							</li>
-							<li>
-								<a class="btn btn-sm variant-ghost-surface" href="/student-bodies">Student Bodies</a
-								>
-							</li>
-							<li><a class="btn btn-sm variant-ghost-surface" href="/gallery"> Gallery </a></li>
-							<li><a class="btn btn-sm variant-ghost-surface" href="/calendar"> Calendar </a></li>
+							<li><a class="btn btn-sm {current_page === '/' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/"> Home </a></li>
+							<li><a class="btn btn-sm {current_page === '/supervisory-bodies' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/supervisory-bodies">Supervisory Bodies</a></li>
+							<li><a class="btn btn-sm {current_page === '/student-bodies' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/student-bodies">Student Bodies</a></li>
+							<li><a class="btn btn-sm {current_page === '/gallery' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/gallery"> Gallery </a></li>
+							<li><a class="btn btn-sm {current_page === '/calendar' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/calendar"> Calendar </a></li>
 							<li style="padding-top:2%;"><LightSwitch /></li>
 						</ul>
 					</div>
@@ -202,6 +208,7 @@
 	<slot />
 </AppShell>
 
+
 <style lange="postcss">
 	hr {
 		border: none;
@@ -217,6 +224,9 @@
 	}
 	.inline-list li {
 		display: inline;
+	}
+	.inline-list a {
+		text-decoration: none;
 	}
 
 	.inline-list-footer {
@@ -249,7 +259,7 @@
 		flex-wrap: nowrap;
 		padding: 0 1em;
 	}
-	a:hover {
+	.footer_bottom a:hover {
 		text-decoration: underline;
 	}
 	.footer {
