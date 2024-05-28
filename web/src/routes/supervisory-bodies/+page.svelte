@@ -4,11 +4,21 @@
 	import type { PageData } from './$types';
 	export let data: PageData;
 </script>
+
 <div class="container h-full w-full mx-auto flex justify-center flex-col">
 	<div class="flex flex-col">
 		<br />
-		<h2  class="h2">Student Affairs Committe (SAC)</h2>
-		<br /> 
+		<h2 class="h2">Student Affairs Committe (SAC)</h2>
+		<br />
+		<h3 style="margin-top:15px" class="h3">What do we do?</h3>
+		<br />
+		<p style="margin-top:15px">
+			The purpose of the Student Affairs Committee is to promote and maintain the welfare of the
+			student body and effective and desirable faculty-student relations. Its functions are to
+			recommend policies and procedures as necessary and proper to accomplish its purpose and to
+			develop the annual student activity budget as submitted to the Board.
+		</p>
+		<br />
 		<h3 style="margin-top:15px;margin-bottom:10px" class="h3">Members</h3>
 		<br />
 		<div style="margin-top:10px" class="avatar-grid mx-4">
@@ -29,7 +39,9 @@
 						{#each member.roles as role}
 							<div class="flex flex-col items-center">
 								<p style="margin:5px" class="font-bold">{role.name}</p>
-								<p style="margin-top:5px; font-size:14px" class="text-gray-500">( {role.startYear} - {role.endYear} )</p>
+								<p style="margin-top:5px; font-size:14px" class="text-gray-500">
+									( {role.startYear} - {role.endYear} )
+								</p>
 							</div>
 						{/each}
 					</div>
@@ -38,7 +50,7 @@
 			{/each}
 		</div>
 		<br />
-		<br/>
+		<br />
 		<h2 style="margin-top: 30px" class="h2">Student Life Committe (SLC)</h2>
 		<br />
 		<h3 style="margin-top:15px" class="h3">What do we do?</h3>
@@ -80,7 +92,9 @@
 						{#each member.roles as role}
 							<div class="flex flex-col items-center">
 								<p style="margin:5px" class="font-bold">{role.name}</p>
-								<p style="margin:5px; font-size:14px" class="text-gray-500">( {role.startYear} - {role.endYear} )</p>
+								<p style="margin:5px; font-size:14px" class="text-gray-500">
+									( {role.startYear} - {role.endYear} )
+								</p>
 							</div>
 						{/each}
 					</div>
@@ -94,16 +108,14 @@
 		<h3 style="margin-top:15px" class="h3">What do we do?</h3>
 		<br />
 		<p style="margin-top:15px">
-			Our mission is to enhance the overall student experience and promote a vibrant campus
-			community. We are dedicated to encouraging an equitable balance between academics and
-			extra-curricular activities for all students across campus and empowering students throughout
-			their academic journey.
+			Our mission is to enhance student experience and foster excellence in the classroom and
+			beyond.We provide programs, activities, and services that enhance the development of students
+			intellectually, emotionally, culturally and physically within a co-curricular learning
+			community.
 			<br />
-			The Student Life Office is here to assist you and ensure that your time at our institution is fulfilling,
-			enjoyable, memorable and our friendly staff is ready to answer your questions and provide the support
-			you need. We understand that your time in college is about more than just attending classes and
-			studying; it's about discovering your passions and creating lasting memories. That's why we offer
-			a variety of programs and initiatives designed to enrich your student life experience.
+			The Student Life Office is ever willing to assist the student community and provide the necessary
+			support to ensure that each student becomes engaged in campus life, develops habits of excellence
+			and connects life outside the classroom to the formal academic curriculum.
 		</p>
 		<br />
 		<h3 style="margin-top:15px;margin-bottom:15px" class="h3">Members</h3>
@@ -130,7 +142,9 @@
 						{#each member.roles as role}
 							<div class="flex flex-col items-center">
 								<p style="margin:5px" class="font-bold">{role.name}</p>
-								<p style="margin:5px; font-size:14px" class="text-gray-500">( {role.startYear} - {role.endYear} )</p>
+								<p style="margin:5px; font-size:14px" class="text-gray-500">
+									( {role.startYear} - {role.endYear} )
+								</p>
 							</div>
 						{/each}
 					</div>
@@ -141,11 +155,12 @@
 		<br />
 	</div>
 </div>
-<br/>
-<br/>
-<br/>
-<style lang="postcss"> 
-@import '../../../static/styles/style.css';
+<br />
+<br />
+<br />
+
+<style lang="postcss">
+	@import '../../../static/styles/style.css';
 	.avatar-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -166,8 +181,8 @@
 		box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Add a subtle box shadow for dark mode */
 	}
 	.h2 {
-		font-family:'Georgia Bold';
-		font-weight:normal;
-		font-size:42px;
+		font-family: 'Georgia Bold';
+		font-weight: normal;
+		font-size: 42px;
 	}
 </style>
