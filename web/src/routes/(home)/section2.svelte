@@ -1,6 +1,23 @@
 <!-- Features6.svelte -->
-<script>
+<script lang="ts">
 	import Vmbtn from './viewMore.svelte';
+	import { base } from '$app/paths';
+	import Carousel from '$lib/carousel/Carousel.svelte';
+	import type { HTMLImgAttributes } from 'svelte/elements';
+	interface ExtendedImgAttributes extends HTMLImgAttributes {
+		desc?: string;
+		title?: string;
+	}
+	let images: ExtendedImgAttributes[] = [];
+	for(let i = 0; i < 53; i++) {
+		images.push({
+			src: `${base}/gallery/${i + 1}.jpg`,
+			alt: 'iiit-h',
+			draggable: false,
+			desc: '',
+			title: ''
+		});
+	}
 </script>
 
 <section class="features6 cid-rRIjJzt6Us" id="features6-h">
@@ -16,34 +33,19 @@
 					<div class="btn-vw">
 						<Vmbtn />
 					</div>
-
 					<div class="new_content__block">
 						<div class="row new_group__content">
 							<div class="col-lg-4">
 								<div class="new_parallax__image">
 									<div class="image">
-										<img src="/gallery/5.jpg" alt="" title="" />
+										<Carousel {images} duration={3000}>
+										</Carousel>
 									</div>
 								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="new_parallax__image">
-									<div class="image">
-										<img src="/gallery/2.jpg" alt="" title="" />
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="new_parallax__image">
-									<div class="image">
-										<img src="/gallery/3.jpg" alt="" title="" />
-									</div>
-								</div>
-							</div>
-
+							</div>	
 							<!-- <div class="col-lg-3 col-md-12 col-sm-12 push title__block"> -->
 							<!-- <h3 class="mbr-section-subtitle mbr-semibold mbr-fonts-style display-4 mt-3">ABOUT US</h3> -->
-							<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5 mt-3">LIFE@IIIT-H</h2>
+							<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5 mt-3" style="padding-top: 10px">LIFE@IIIT-H</h2>
 							<p class="mbr-text mbr-fonts-style display-4">
 								IIIT H is where bright, committed, innovative people congregate to learn, live, play
 								and work.Diverse in every sense of the word, our community is a fertile breeding
@@ -62,9 +64,6 @@
 					<div class="col-lg-3 col-md-12 col-sm-12 push" style="padding-top:12%;">
 						<h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5">ABOUT US</h2>
 					</div>
-					<div style="width:68vw">
-						<Vmbtn />
-					</div>
 					<div class="new_content__block">
 						<div class="row new_group__content">
 							<div class="col-lg-4">
@@ -87,6 +86,9 @@
 										<img src="/gallery/3.jpg" alt="" title="" />
 									</div>
 								</div>
+							</div>
+							<div style="width:68vw">
+								<Vmbtn />
 							</div>
 
 							<!-- <div class="col-lg-3 col-md-12 col-sm-12 push title__block"> -->
@@ -225,6 +227,7 @@
 		}
 		.minwidth .mbr-text {
 			font-size: 15px;
+			padding-right: 15%;
 		}
 	}
 	@media screen and (min-width: 600px) and (max-width: 768px) {

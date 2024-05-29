@@ -52,31 +52,5 @@
 				in:fly={transitionSlideIn}
 				class={imgClass}
 			/>
-			<div class="text-block">
-				<h4>{image.title}</h4>
-				<p>{image.desc}</p>
-			</div>
 	{/key}
 {/if}
-
-<style lang="postcss">
-	.text-block {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
-		color: white;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		align-items: flex-start;
-		padding: 20px;
-		text-align: left;
-	}
-	.text-block h4 {
-		font-size: 1.5rem;
-		font-weight: 700;
-	}
-</style>
