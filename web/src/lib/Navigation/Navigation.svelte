@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getDrawerStore, LightSwitch } from '@skeletonlabs/skeleton';
+	import { getDrawerStore, LightSwitch, modeCurrent } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
 	let current_page = $page.url.pathname;
 	import '../../app.postcss';
@@ -9,8 +9,6 @@
 	function drawerClose() {
 		drawerStore.close();
 	}
-
-	import { modeCurrent } from '@skeletonlabs/skeleton';
 
 	let color: string;
 
