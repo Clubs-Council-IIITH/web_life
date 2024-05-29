@@ -34,6 +34,11 @@
 			// @ts-ignore
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				initialView: 'dayGridMonth',
+				views: {
+					dayGridMonth: {
+						dayMaxEvents: 10,
+					}
+				},
 				dayMaxEvents: true,
 				events: data.page_server_data,
 				eventDataTransform: eventDataTransform,
