@@ -18,7 +18,7 @@
 	import css from 'highlight.js/lib/languages/css';
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import typescript from 'highlight.js/lib/languages/typescript';
-	import Navigation from '$lib/Navigation/Navigation.svelte';
+	import MobileNavigation from '$lib/Navigation/Navigation.svelte';
 
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
@@ -32,8 +32,8 @@
 	import { page } from '$app/stores';
 	let current_page = '';
 	page.subscribe(({ url }) => {
-        current_page = url.pathname;
-    });
+		current_page = url.pathname;
+	});
 
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
@@ -74,9 +74,9 @@
 
 <!-- App Shell -->
 <Drawer>
-	<h2 class="p-4 navclass">Navigation</h2>
+	<h2 class="p-4 navclass my-2" style="font-size: 22px">Navigation</h2>
 	<hr />
-	<Navigation />
+	<MobileNavigation />
 </Drawer>
 <AppShell>
 	<svelte:fragment slot="header">
@@ -100,12 +100,55 @@
 				<svelte:fragment slot="trail">
 					<div>
 						<ul class="inline-list">
-							<li><a class="btn btn-sm {current_page === '/' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/"> Home </a></li>
-							<li><a class="btn btn-sm {current_page === '/supervisory-bodies' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/supervisory-bodies">Supervisory Bodies</a></li>
-							<li><a class="btn btn-sm {current_page === '/student-bodies' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/student-bodies">Student Bodies</a></li>
-							<li><a class="btn btn-sm {current_page === '/gallery' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/gallery"> Gallery </a></li>
-							<li><a class="btn btn-sm {current_page === '/calendar' ? 'variant-filled-primary' : 'variant-ghost-surface'}" href="/calendar"> Calendar </a></li>
-							<li style="padding-top:2%;"><LightSwitch /></li>
+							<li>
+								<a
+									class="btn btn-sm {current_page === '/'
+										? 'variant-filled-primary'
+										: 'variant-ghost-surface'}"
+									href="/"
+								>
+									Home
+								</a>
+							</li>
+							<li>
+								<a
+									class="btn btn-sm {current_page === '/supervisory-bodies'
+										? 'variant-filled-primary'
+										: 'variant-ghost-surface'}"
+									href="/supervisory-bodies">Supervisory Bodies</a
+								>
+							</li>
+							<li>
+								<a
+									class="btn btn-sm {current_page === '/student-bodies'
+										? 'variant-filled-primary'
+										: 'variant-ghost-surface'}"
+									href="/student-bodies">Student Bodies</a
+								>
+							</li>
+							<li>
+								<a
+									class="btn btn-sm {current_page === '/gallery'
+										? 'variant-filled-primary'
+										: 'variant-ghost-surface'}"
+									href="/gallery"
+								>
+									Gallery
+								</a>
+							</li>
+							<li>
+								<a
+									class="btn btn-sm {current_page === '/calendar'
+										? 'variant-filled-primary'
+										: 'variant-ghost-surface'}"
+									href="/calendar"
+								>
+									Calendar
+								</a>
+							</li>
+							<li style="padding-top:1%;">
+								<LightSwitch width="w-14" height="h-7" />
+							</li>
 						</ul>
 					</div>
 				</svelte:fragment>
@@ -202,13 +245,12 @@
 					<a href="https://clubs.iiit.ac.in/bug-report"><b>Report Bugs</b></a>
 				</p>
 			</div>
-			<br/>
+			<br />
 		</div>
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
 </AppShell>
-
 
 <style lange="postcss">
 	hr {
