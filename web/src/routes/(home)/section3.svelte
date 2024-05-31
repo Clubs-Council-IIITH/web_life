@@ -4,6 +4,13 @@
 	let event_data = data.page_server_data['events'].slice(0, 4);
 </script>
 
+<svelte:head>
+	{#each event_data as event}
+		<link rel="preload" href={event.image} as="image">
+		<link rel="preload" href={event.club_logo} as="image">
+	{/each}
+</svelte:head>
+
 <section class="features12 cid-rRIizpy8Kq" id="features12-9">
 	<div class="container">
 		<div class="row">

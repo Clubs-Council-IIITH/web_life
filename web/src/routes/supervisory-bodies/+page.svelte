@@ -5,6 +5,18 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	{#each data.page_server_data.sac as image}
+		<link rel="preload" href={image.imagesrc} as="image">
+	{/each}
+	{#each data.page_server_data.slc as image}
+		<link rel="preload" href={image.imagesrc} as="image">
+	{/each}
+	{#each data.page_server_data.slo as image}
+		<link rel="preload" href={image.imagesrc} as="image">
+	{/each}
+</svelte:head>
+
 <div
 	class="container h-full w-full mx-auto flex justify-center flex-col"
 	style="margin-top:8vh;padding-bottom:5vh;"

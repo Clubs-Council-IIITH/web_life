@@ -20,6 +20,12 @@
 	}
 </script>
 
+<svelte:head>
+	{#each images.slice(0,20) as image}
+		<link rel="preload" href={image.src} as="image">
+	{/each}
+</svelte:head>
+
 <section class="features6 cid-rRIjJzt6Us" id="features6-h">
 	<div class="container">
 		<div class="row align-items-center wrap">

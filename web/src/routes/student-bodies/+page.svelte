@@ -5,6 +5,13 @@
 	export let data: PageData;
 </script>
 
+<svelte:head>
+	{#each data.page_server_data.clubs as image}
+		<link rel="preload" href={image.logo} as="image">
+		<link rel="preload" href={image.banner} as="image">
+	{/each}
+</svelte:head>
+
 <div class="container h-full w-full mx-auto flex justify-center items-center flex-col" style="margin-top:8vh; padding-bottom:5vh;">
 	<br />
 	<div class="text-center flex flex-col items-center" style="padding-top:3vh;padding-bottom:2vh;">
