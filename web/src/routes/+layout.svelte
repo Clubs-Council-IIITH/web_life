@@ -81,11 +81,11 @@
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<div class="bottom">
+		<div class="bottom fixed-top">
 			<AppBar>
 				<svelte:fragment slot="lead">
 					<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
-						<span>
+						<span style="margin-right:8vw;">
 							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
 								<rect width="100" height="20" />
 								<rect y="30" width="100" height="20" />

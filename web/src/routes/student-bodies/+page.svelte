@@ -5,13 +5,13 @@
 	export let data: PageData;
 </script>
 
-<div class="container h-full w-full mx-auto flex justify-center items-center flex-col">
+<div class="container h-full w-full mx-auto flex justify-center items-center flex-col" style="margin-top:8vh; padding-bottom:5vh;">
 	<br />
-	<div class="text-center flex flex-col items-center" style="padding-top:2%;">
+	<div class="text-center flex flex-col items-center" style="padding-top:3vh;padding-bottom:2vh;">
 		<h2 class="h2">Student Bodies</h2>
 	</div>
 	<br />
-	<p class="mx-4" style="margin-bottom:15px">
+	<p class="mx-4" style="padding-bottom:3vh">
 		IIIT -H is difficult, but rewarding and it is our deepest desire to set our student leaders, as
 		well as current and future groups up for success. The student bodies at IIIT Hyderabad are run
 		by the students, for the students. While the Parliament represents the student community and
@@ -27,13 +27,13 @@
 			{#each data.page_server_data.clubs as studentbody}
 				<a href={studentbody.redirectURL} target="_blank" class="block">
 					<div
-						class="relative h-64 overflow-hidden rounded-lg hover:shadow-xl hover:scale-105 transition duration-300"
+						class="relative h-64 overflow-hiden rounded-lg hover:shadow-xl hover:scale-105 transition duration-300"
 					>
 						<img class="rounded-lg object-cover w-full h-full" src={studentbody.banner} alt="" />
 						<div
 							class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-70"
 						></div>
-						<div class="absolute bottom-4 left-4 text-white z-10 flex items-center">
+						<div class="absolute bottom-4 left-4 text-white z-10 flex items-center" style="z-index:0;">
 							<img
 								class="w-10 h-10 rounded-full object-cover border-white border-2"
 								src={studentbody.logo}
@@ -56,4 +56,11 @@
 </div>
 
 <style lang="postcss">
+	@import '../../../static/styles/style.css';
+	.h2{
+		font-family: 'Georgia Bold';
+		font-weight: normal;
+		font-size: 42px;
+		line-height: 50px;
+	}
 </style>

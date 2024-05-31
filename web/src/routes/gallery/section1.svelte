@@ -17,7 +17,7 @@
 	images.sort(() => Math.random() - 0.5);
 </script>
 
-<section class="features6 cid-rRIjJzt6Us" id="features6-h">
+<section class="features6 cid-rRIjJzt6Us" id="features6-h" style="margin-top:10vh;">
 	<div class="center">
 		<center><h2 class="mbr-section-title mbr-bold mbr-fonts-style display-5">Gallery</h2></center>
 	</div>
@@ -35,3 +35,12 @@
 		</Grid>
 	</div>
 </section>
+
+<style>
+	@media screen and (max-width:1280px){
+	.center .mbr-section-title{
+		padding-top: 3vh;
+		padding-bottom:1vh;
+	}
+}
+</style>

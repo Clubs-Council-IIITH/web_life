@@ -5,7 +5,10 @@
 	export let data: PageData;
 </script>
 
-<div class="container h-full w-full mx-auto flex justify-center flex-col">
+<div
+	class="container h-full w-full mx-auto flex justify-center flex-col"
+	style="margin-top:8vh;padding-bottom:5vh;"
+>
 	<div class="flex flex-col">
 		<br />
 		<h2 class="h2">Student Affairs Committe (SAC)</h2>
@@ -32,7 +35,7 @@
 							src={member.imagesrc}
 							alt={member.uid}
 						/>
-						<h5 class="mb-1 text-xl font-medium ">{member.firstname + ' ' + member.lastname}</h5>
+						<h5 class="mb-1 text-xl font-medium">{member.firstname + ' ' + member.lastname}</h5>
 						<br />
 
 						<!-- Roles and Years -->
@@ -185,5 +188,10 @@
 		font-weight: normal;
 		font-size: 42px;
 		line-height: 50px;
+	}
+	@media screen and (max-width: 600px) {
+		.avatar-grid{
+			width:80vw;
+		}
 	}
 </style>
