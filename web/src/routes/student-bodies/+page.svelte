@@ -56,7 +56,7 @@
 </div>
 
 <style lang="postcss">
-	@import '../../../static/styles/style.css';
+	/* @import '../../../static/styles/style.css'; */
 	.h2{
 		font-family: 'Georgia Bold';
 		font-weight: normal;

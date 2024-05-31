@@ -163,7 +163,7 @@
 <br />
 
 <style lang="postcss">
-	@import '../../../static/styles/style.css';
+	/* @import '../../../static/styles/style.css'; */
 	.avatar-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
