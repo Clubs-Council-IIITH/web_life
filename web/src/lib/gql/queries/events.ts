@@ -7,7 +7,8 @@ export const GET_RECENT_EVENTS = gql`
 			name
 			code
 			clubid
-			datetimeperiod
+			startTime
+			endTime
 			poster
 		}
 	}
@@ -20,7 +21,8 @@ export const GET_ALL_EVENTS = gql`
 			name
 			code
 			clubid
-			datetimeperiod
+			startTime
+			endTime
 			status {
 				state
 			}
