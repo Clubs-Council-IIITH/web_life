@@ -12,7 +12,7 @@ const makeClient = () => {
     url: GRAPHQL_ENDPOINT,
     exchanges: [
       // debugExchange,
-      cacheExchange,
+      // cacheExchange,
       fetchExchange
     ],
     fetchOptions: () => {
