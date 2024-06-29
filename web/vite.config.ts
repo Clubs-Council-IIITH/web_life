@@ -1,6 +1,7 @@
 import { purgeCss } from 'vite-plugin-tailwind-purgecss';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
 	server: {
@@ -10,10 +11,15 @@ export default defineConfig({
 		}
 	},
 	plugins: [sveltekit(), purgeCss({
-			safelist: {
-				// any selectors that begin with "hljs-" will not be purged
-				greedy: [/^hljs-/],
-			},
-		}),
+		safelist: {
+			// any selectors that begin with "hljs-" will not be purged
+			greedy: [/^hljs-/],
+		},
+	}),
 	],
+	resolve: {
+		alias: {
+			$fonts: resolve('./static/fonts')
+		}
+	}
 });
