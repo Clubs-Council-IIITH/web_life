@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	export let data: PageData;
-	let event_data = data.page_server_data['events'].slice(0, 4);
+	let event_data = data.page_server_data['events'];
 </script>
 
 <svelte:head>
@@ -37,7 +37,7 @@
 							</div>
 							<div class="author__post">
 								<p class="author mbr-fonts-style display-4">
-									Posted by <strong>{event.clubid}</strong>
+									Posted by <strong>{event.club_name}</strong>
 								</p>
 								<p class="date mbr-fonts-style display-4">Date: {event.date}</p>
 							</div>

@@ -62,13 +62,14 @@ export const load: PageServerLoad = async () => {
 	const { data: { events } = {} } = await getClient().query(GET_ALL_EVENTS, {
 		clubid: null,
 		public: true,
+		limit: 4,
 	});
-	let final_events = events?.filter((event: any) => event?.status?.state !== "deleted")
-	let top_five_events = final_events.slice(0, 5);
+	let top_five_events = events;
 	for (let i = 0; i < top_five_events.length; i++) {
 		for (let j = 0; j < allClubs.length; j++) {
 			if (allClubs[j].cid == top_five_events[i].clubid) {
 				top_five_events[i]['club_logo'] = allClubs[j].logo
+				top_five_events[i]['club_name'] = allClubs[j].name
 			}
 		}
 		//date string
@@ -93,7 +94,7 @@ export const load: PageServerLoad = async () => {
 	}
 	return {
 		page_server_data: {
-			events: final_events
+			events: top_five_events
 		}
 	};
 };
