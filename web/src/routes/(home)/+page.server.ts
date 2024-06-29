@@ -32,48 +32,31 @@ export const load: PageServerLoad = async () => {
 		category: 'other',
 		redirectURL: 'https://clubs.iiit.ac.in/'
 	};
+
 	let allClubs: any[] = [];
 	for (let i = 0; i < activeClubs.length; i++) {
 		let logo = activeClubs[i].logo;
 		activeClubs[i].logo = getFile(logo);
-		let banner = activeClubs[i].banner;
-		activeClubs[i].banner = getFile(banner);
-
-		const { data: { club } = {} } = await getClient().query(GET_CLUB, {
-			clubInput: {
-				cid: activeClubs[i].cid
-			}
-		});
-
-		if (club?.socials?.website)
-			activeClubs[i].redirectURL = club.socials.website;
-		else
-			activeClubs[i].redirectURL = `https://clubs.iiit.ac.in/student-bodies/${activeClubs[i].cid}`;
-
 		allClubs = [...allClubs, activeClubs[i]];
-		if (activeClubs[i].cid == 'ec') {
-			activeClubs[i].banner = 'https://clubs.iiit.ac.in/_next/image?url=https%3A%2F%2Fpicsum.photos%2Fseed%2FRWxlY3Rpb24gQ29tbWlzc2lvbg%3D%3D%2F640%2F480%3Fblur%3D1&w=1920&q=75'
-		}
 	}
-	allClubs = [...allClubs, cc];
-	allClubs.sort((a, b) => {
-		return a.name.localeCompare(b.name);
-	});
+	allClubs = [cc, ...allClubs];
+
 	const { data: { events } = {} } = await getClient().query(GET_ALL_EVENTS, {
 		clubid: null,
 		public: true,
 		limit: 4,
 	});
-	let top_five_events = events;
-	for (let i = 0; i < top_five_events.length; i++) {
+
+	let recent_events = events;
+	for (let i = 0; i < recent_events.length; i++) {
 		for (let j = 0; j < allClubs.length; j++) {
-			if (allClubs[j].cid == top_five_events[i].clubid) {
-				top_five_events[i]['club_logo'] = allClubs[j].logo
-				top_five_events[i]['club_name'] = allClubs[j].name
+			if (allClubs[j].cid == recent_events[i].clubid) {
+				recent_events[i]['club_logo'] = allClubs[j].logo
+				recent_events[i]['club_name'] = allClubs[j].name
 			}
 		}
 		//date string
-		let isoDateString = top_five_events[i].datetimeperiod[0];
+		let isoDateString = recent_events[i].datetimeperiod[0];
 		let date = new Date(isoDateString);
 		const monthNames = [
 			"January", "February", "March", "April", "May", "June",
@@ -83,18 +66,19 @@ export const load: PageServerLoad = async () => {
 		let day = date.getDate();
 		let year = date.getFullYear();
 		let formattedDate = `${month} ${day}, ${year}`;
-		top_five_events[i]['date'] = formattedDate;
+		recent_events[i]['date'] = formattedDate;
 
-		if (top_five_events[i].poster) {
-			top_five_events[i].image = getFile(top_five_events[i].poster)
+		if (recent_events[i].poster) {
+			recent_events[i].image = getFile(recent_events[i].poster)
 		}
 		else {
-			top_five_events[i].image = top_five_events[i].club_logo
+			recent_events[i].image = recent_events[i].club_logo
 		}
 	}
+
 	return {
 		page_server_data: {
-			events: top_five_events
+			events: recent_events
 		}
 	};
 };
