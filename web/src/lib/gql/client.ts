@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
-import { Client, createClient, debugExchange, cacheExchange, fetchExchange } from 'urql';
-import { browser } from '$app/environment';
+import { Client, createClient, fetchExchange } from 'urql';
+// import { browser } from '$app/environment';
 
 const GRAPHQL_ENDPOINT = 'https://clubs.iiit.ac.in/graphql';
 

@@ -17,25 +17,6 @@
 
 <style lang="postcss">
     @import '../../static/styles/style.css';
-    .avatar-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
-        text-align: center;
-    }
-    .avatar-grid .card:hover {
-        transition:
-            background-color 0.3s ease,
-            box-shadow 0.3s ease;
-        background-color: #f3f4f6; /* Change the background color to highlight */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-    }
-
-    /* Dark mode hover effect */
-    .dark .avatar-grid .card:hover {
-        background-color: #374151; /* Change the background color for dark mode */
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* Add a subtle box shadow for dark mode */
-    }
     .h2 {
         font-family: 'Georgia Bold';
         font-weight: normal;

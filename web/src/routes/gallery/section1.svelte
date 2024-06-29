@@ -3,7 +3,6 @@
 <script>
 	import Grid from 'svelte-grid-responsive';
 	import { base } from '$app/paths';
-	import { size } from '@floating-ui/dom';
 
 	let images = [];
 	for (let i = 1; i < 53; i++) {
