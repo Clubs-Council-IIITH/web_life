@@ -4,7 +4,10 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	server: {
-		port: 5000
+		port: 80,
+		fs: {
+			allow: ["/cache/node_modules/"]
+		}
 	},
 	plugins: [sveltekit(), purgeCss({
 			safelist: {
