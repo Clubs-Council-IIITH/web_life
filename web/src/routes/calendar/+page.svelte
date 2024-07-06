@@ -3,6 +3,8 @@
 	import type { PageData } from './$types';
 	import stc from 'string-to-color';
 	import { modeCurrent } from '@skeletonlabs/skeleton';
+	import tippy from 'tippy.js';
+	import 'tippy.js/dist/tippy.css'; // Optional for styling
 
 	var calendarEl;
 	export let data: PageData;
@@ -24,8 +26,19 @@
 			end: new Date(event.datetimeperiod[1]),
 			backgroundColor: stc(event.clubid),
 			url: `https://clubs.iiit.ac.in/events/${event._id}`,
-			display: 'block'
+			display: 'block',
+			clubid: event.clubid
 		};
+	}
+
+	function handleEventMouseEnter(info: any) {
+		const { event, el } = info;
+		const clubName = data.page_server_data.clubdata.find((club) => club.cid === event.extendedProps.clubid)?.name;
+		tippy(el, {
+			content: `<strong>${event.title}</strong> by ${clubName? clubName:event.extendedProps.clubid}`,
+			allowHTML: true,
+			placement: 'top',
+		});
 	}
 
 	onMount(async () => {
@@ -40,12 +53,13 @@
 					}
 				},
 				dayMaxEvents: true,
-				events: data.page_server_data,
+				events: data.page_server_data.events,
 				eventDataTransform: eventDataTransform,
+				eventMouseEnter: handleEventMouseEnter,
 				eventClick: function(event: any) {
 					if (event.event.url) {
-					event.jsEvent.preventDefault();
-					window.open(event.event.url, "_blank");
+						event.jsEvent.preventDefault();
+						window.open(event.event.url, "_blank");
 					}
 				}
 			});
