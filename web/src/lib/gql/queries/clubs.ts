@@ -44,3 +44,13 @@ export const GET_CLUB = gql`
     }
   }
 `;
+
+export const GET_ALL_CLUBS_SHORT = gql`
+  query AllClubs {
+    allClubs {
+      _id
+      cid
+      name
+    }
+  }
+`;

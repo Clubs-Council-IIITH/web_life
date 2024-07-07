@@ -33,11 +33,13 @@
 
 	function handleEventMouseEnter(info: any) {
 		const { event, el } = info;
-		const clubName = data.page_server_data.clubdata.find((club) => club.cid === event.extendedProps.clubid)?.name;
+		const clubName = data.page_server_data.clubdata.find(
+			(club) => club.cid === event.extendedProps.clubid
+		)?.name;
 		tippy(el, {
-			content: `<strong>${event.title}</strong> by ${clubName? clubName:event.extendedProps.clubid}`,
+			content: `<strong>${event.title}</strong> by ${clubName ? clubName : event.extendedProps.clubid}`,
 			allowHTML: true,
-			placement: 'top',
+			placement: 'top'
 		});
 	}
 
@@ -49,17 +51,17 @@
 				initialView: 'dayGridMonth',
 				views: {
 					dayGridMonth: {
-						dayMaxEvents: 10,
+						dayMaxEvents: 10
 					}
 				},
 				dayMaxEvents: true,
 				events: data.page_server_data.events,
 				eventDataTransform: eventDataTransform,
 				eventMouseEnter: handleEventMouseEnter,
-				eventClick: function(event: any) {
+				eventClick: function (event: any) {
 					if (event.event.url) {
 						event.jsEvent.preventDefault();
-						window.open(event.event.url, "_blank");
+						window.open(event.event.url, '_blank');
 					}
 				}
 			});
