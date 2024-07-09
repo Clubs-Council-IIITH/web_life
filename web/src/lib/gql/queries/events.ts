@@ -24,6 +24,7 @@ export const GET_ALL_EVENTS = gql`
 			status {
 				state
 			}
+			description
 			location
 			poster
 		}

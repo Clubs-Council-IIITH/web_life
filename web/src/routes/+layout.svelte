@@ -128,6 +128,14 @@
 							</li>
 							<li>
 								<a
+									class="btn btn-sm {current_page === '/SLC-events'
+										? 'variant-filled-primary'
+										: 'variant-ghost-surface'}"
+									href="/SLC-events">SLC Events</a
+								>
+							</li>
+							<li>
+								<a
 									class="btn btn-sm {current_page === '/gallery'
 										? 'variant-filled-primary'
 										: 'variant-ghost-surface'}"

@@ -48,6 +48,7 @@
   "type": "module",
   "dependencies": {
     "@floating-ui/dom": "1.6.5",
+    "date-fns": "^3.6.0",
     "graphql-tag": "^2.12.6",
     "highlight.js": "11.9.0",
     "string-to-color": "^2.2.2",
