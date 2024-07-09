@@ -3,10 +3,10 @@ import { getClient } from '$lib/gql/client';
 import { GET_ALL_EVENTS } from '$lib/gql/queries/events';
 import { GET_ACTIVE_CLUBS, GET_CLUB } from '$lib/gql/queries/clubs';
 
-let staticUrl = 'http://clubs.iiit.ac.in/static';
 let FILESERVER_URL = 'https://clubs.iiit.ac.in';
-function getStaticFile(filepath: string) {
-	return `${staticUrl}/${filepath}`;
+
+function getStaticFile(filepath: string, filetype="image") {
+	return `${FILESERVER_URL}/files/static?filename=${filepath}&filetype=${filetype}`;
 }
 
 function getFile(filepath: String) {
@@ -25,8 +25,8 @@ export const load: PageServerLoad = async () => {
 	const cc = {
 		cid: 'clubs',
 		name: 'Clubs Council (Umbrella Body of Clubs)',
-		logo: getStaticFile('img/cc-logo.png'),
-		banner: getStaticFile('img/cc-banner.png'),
+		logo: getStaticFile('cc-logo.png'),
+		banner: getStaticFile('cc-banner.png'),
 		tagline: "Let's make college life fun!",
 		studentBody: true,
 		category: 'other',
