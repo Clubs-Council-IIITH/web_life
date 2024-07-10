@@ -32,6 +32,9 @@
 		<li class={current_page === '/student-bodies' ? 'variant-filled-primary' : ''}>
 			<a href="/student-bodies" on:click={drawerClose}>Student Bodies</a>
 		</li>
+		<li class={current_page === '/SLC-events' ? 'variant-filled-primary' : ''}>
+			<a href="/SLC-events" on:click={drawerClose}>SLC Events</a>
+		</li>
 		<li class={current_page === '/calendar'
 		? 'variant-filled-primary'
 		: ''}>
