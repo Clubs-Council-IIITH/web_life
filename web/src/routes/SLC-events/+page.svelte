@@ -12,10 +12,10 @@
 </svelte:head>
 
 <section class="features12 cid-rRIizpy8Kq" id="features12-9" style="margin-top:8vh;">
-	<div class="container">
+	<div class="container" style="max-width: 94%">
 		<div class="row">
 			{#each event_data as event}
-				<div class="col-lg-4 col-md-6 wrap">
+				<div class="col-lg-4 col-md-6 col-sm-12 wrap">
 					<div class="flip-card">
 						<div class="flip-card-inner">
 							<div class="flip-card-front">
@@ -29,22 +29,23 @@
 							</div>
 							<div class="flip-card-back">
 								<div class="card__content">
-									<p class="content__text mbr-fonts-style display-4 overflow-hidden">
-										{!event.description ? 'No description given' : ''}
-										{event.description.split(' ').slice(0, 100).join(' ')}
-										{event.description.split(' ').length > 100 ? '...' : ''}
-									</p>
-								</div>
-								<div class="card__post" style="opacity: 1;">
-									<!-- <div class="image__post">
-										<img src={event.club_logo} alt="" />
-									</div> -->
-									<div class="author__post w-100">
-										<p class="author mbr-fonts-style display-4">
-											Location: <strong>{event.location != '' ? event.location : 'N/A'}</strong>
-										</p>
-										<p class="date mbr-fonts-style display-4">Date: {event.date}</p>
+									<div class="card__post" style="opacity: 1;">
+										<!-- <div class="image__post">
+											<img src={event.club_logo} alt="" />
+										</div> -->
+										<div class="author__post w-100">
+											<p class="author mbr-fonts-style">
+												Location: <strong>{event.location != '' ? event.location : 'N/A'}</strong>
+											</p>
+											<p class="date mbr-fonts-style">Date: <strong>{event.date}</strong></p>
+										</div>
 									</div>
+									<br /><br />
+									<p class="content__text mbr-fonts-style overflow-hidden">
+										{!event.description ? 'No description given' : ''}
+										{event.description.split(' ').slice(0, 30).join(' ')}
+										{event.description.split(' ').length > 30 ? '...' : ''}
+									</p>
 								</div>
 							</div>
 						</div>
@@ -58,6 +59,7 @@
 <style lang="postcss">
 	.flip-card {
 		background-color: transparent;
+		color: white;
 		width: 100%;
 		height: 100%;
 		perspective: 1000px;
@@ -86,12 +88,10 @@
 	.flip-card-front {
 		background-color: #bbb;
 		height: 100%;
-		color: black;
 	}
 
 	.flip-card-back {
 		background-color: rgb(var(--color-primary-500));
-		color: white;
 		transform: rotateY(180deg);
 	}
 
@@ -106,8 +106,7 @@
 		position: absolute;
 		bottom: 10px;
 		left: 10px;
-		color: white;
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0.4);
 		padding: 5px;
 		border-radius: 5px;
 	}
@@ -123,29 +122,37 @@
 	}
 
 	.card__content {
+		position: relative;
 		padding: 20px;
 		height: 100%;
+		top: 2px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
+	.content__title {
+		right: 10px;
+	}
 	.card__post {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		justify-content: center;
-		margin-top: 20px;
+		align-items: center;
 	}
-	.view-mobile{
+
+	.card__post .author__post {
+		white-space: wrap;
+	}
+
+	.view-mobile {
 		position: absolute;
 		width: 100%;
 		padding: 10px;
-		color: white;
 	}
 
-	.view-details-btn{
+	.view-details-btn {
 		display: none;
 		background: rgba(0, 0, 0, 0.5);
 		padding: 5px;
@@ -154,9 +161,29 @@
 		border-radius: 5px;
 	}
 
+	.dark .flip-card-front .content__title,  .view-details-btn{
+		background: rgba(255, 255, 255, 0.7);
+	}
+
+	.dark .container .flip-card {
+		color: black;
+	}
+
+	.dark .container .flip-card {
+		color: black;
+	}
 	@media only screen and (max-width: 600px) {
-		.view-details-btn{
+		.view-details-btn {
 			display: block;
+		}
+	}
+
+	@media only screen and (max-width: 350px) {
+		.content__text {
+			display: none;
+		}
+		.card__post {
+			top: unset;
 		}
 	}
 </style>
