@@ -19,6 +19,10 @@ function getFile(filepath: String) {
 	}
 }
 
+function convertTZ(date: Date | string, tzString: string = 	"Asia/Kolkata") {
+    return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));   
+}
+
 
 export const load: PageServerLoad = async () => {
 	const { data: { activeClubs } = {} } = await getClient().query(GET_ACTIVE_CLUBS, {});
@@ -57,7 +61,8 @@ export const load: PageServerLoad = async () => {
 		}
 		//date string
 		let isoDateString = recent_events[i].datetimeperiod[0];
-		let date = new Date(isoDateString);
+		let date = convertTZ(isoDateString);
+
 		const monthNames = [
 			"January", "February", "March", "April", "May", "June",
 			"July", "August", "September", "October", "November", "December"

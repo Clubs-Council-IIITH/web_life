@@ -16,12 +16,20 @@
 		}
 	}
 
+	function convertTZ(date: Date | string, tzString: string = 'Asia/Kolkata') {
+		return new Date(
+			(typeof date === 'string' ? new Date(date) : date).toLocaleString('en-US', {
+				timeZone: tzString
+			})
+		);
+	}
+
 	function eventDataTransform(event: any) {
 		return {
 			id: event._id,
 			title: event.name,
-			start: new Date(event.datetimeperiod[0]),
-			end: new Date(event.datetimeperiod[1]),
+			start: convertTZ(event.datetimeperiod[0]),
+			end: convertTZ(event.datetimeperiod[1]),
 			backgroundColor: stc(event.clubid),
 			url: `https://clubs.iiit.ac.in/events/${event._id}`,
 			display: 'block'
@@ -44,8 +52,8 @@
 				eventDataTransform: eventDataTransform,
 				eventClick: function(event: any) {
 					if (event.event.url) {
-					event.jsEvent.preventDefault();
-					window.open(event.event.url, "_blank");
+						event.jsEvent.preventDefault();
+						window.open(event.event.url, '_blank');
 					}
 				}
 			});

@@ -56,6 +56,10 @@ function locationLabel(location: string): string {
   return locations.map(loc => locationMap[loc.trim() as LocationKey] || loc.trim()).join(', ');
 }
 
+function convertTZ(date: Date | string, tzString: string = 	"Asia/Kolkata") {
+  return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));   
+}
+
 export const load: PageServerLoad = async () => {
   const { data: { events } = {} } = await getClient().query(GET_ALL_EVENTS, {
     clubid: "vamsi.krishna",
@@ -68,7 +72,7 @@ export const load: PageServerLoad = async () => {
 
   const slc_events = events.map(event => {
     const isoDateString = event.datetimeperiod[0];
-    const date = new Date(isoDateString);
+    const date = convertTZ(isoDateString);
     return {
       ...event,
       date: format(date, 'EEEE, MMMM do, yyyy'),
