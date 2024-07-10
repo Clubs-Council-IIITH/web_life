@@ -136,22 +136,22 @@
 							</li>
 							<li>
 								<a
-									class="btn btn-sm {current_page === '/gallery'
-										? 'variant-filled-primary'
-										: 'variant-ghost-surface'}"
-									href="/gallery"
-								>
-									Gallery
-								</a>
-							</li>
-							<li>
-								<a
 									class="btn btn-sm {current_page === '/calendar'
 										? 'variant-filled-primary'
 										: 'variant-ghost-surface'}"
 									href="/calendar"
 								>
 									Calendar
+								</a>
+							</li>
+							<li>
+								<a
+									class="btn btn-sm {current_page === '/gallery'
+										? 'variant-filled-primary'
+										: 'variant-ghost-surface'}"
+									href="/gallery"
+								>
+									Gallery
 								</a>
 							</li>
 							<li style="padding-top:1%;">
