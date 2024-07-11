@@ -3,10 +3,10 @@ import { getClient } from '$lib/gql/client';
 import { GET_ALL_EVENTS } from '$lib/gql/queries/events';
 import { GET_ACTIVE_CLUBS, GET_CLUB } from '$lib/gql/queries/clubs';
 
-let staticUrl = 'http://clubs.iiit.ac.in/static';
 let FILESERVER_URL = 'https://clubs.iiit.ac.in';
-function getStaticFile(filepath: string) {
-	return `${staticUrl}/${filepath}`;
+
+function getStaticFile(filepath: string, filetype="image") {
+	return `${FILESERVER_URL}/files/static?filename=${filepath}&filetype=${filetype}`;
 }
 
 function getFile(filepath: String) {
@@ -19,14 +19,18 @@ function getFile(filepath: String) {
 	}
 }
 
+function convertTZ(date: Date | string, tzString: string = 	"Asia/Kolkata") {
+    return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));   
+}
+
 
 export const load: PageServerLoad = async () => {
 	const { data: { activeClubs } = {} } = await getClient().query(GET_ACTIVE_CLUBS, {});
 	const cc = {
 		cid: 'clubs',
 		name: 'Clubs Council (Umbrella Body of Clubs)',
-		logo: getStaticFile('img/cc-logo.png'),
-		banner: getStaticFile('img/cc-banner.png'),
+		logo: getStaticFile('cc-logo.png'),
+		banner: getStaticFile('cc-banner.png'),
 		tagline: "Let's make college life fun!",
 		studentBody: true,
 		category: 'other',
@@ -57,7 +61,8 @@ export const load: PageServerLoad = async () => {
 		}
 		//date string
 		let isoDateString = recent_events[i].datetimeperiod[0];
-		let date = new Date(isoDateString);
+		let date = convertTZ(isoDateString);
+
 		const monthNames = [
 			"January", "February", "March", "April", "May", "June",
 			"July", "August", "September", "October", "November", "December"

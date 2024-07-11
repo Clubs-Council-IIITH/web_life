@@ -128,13 +128,11 @@
 							</li>
 							<li>
 								<a
-									class="btn btn-sm {current_page === '/gallery'
+									class="btn btn-sm {current_page === '/SLC-events'
 										? 'variant-filled-primary'
 										: 'variant-ghost-surface'}"
-									href="/gallery"
+									href="/SLC-events">SLC Events</a
 								>
-									Gallery
-								</a>
 							</li>
 							<li>
 								<a
@@ -144,6 +142,16 @@
 									href="/calendar"
 								>
 									Calendar
+								</a>
+							</li>
+							<li>
+								<a
+									class="btn btn-sm {current_page === '/gallery'
+										? 'variant-filled-primary'
+										: 'variant-ghost-surface'}"
+									href="/gallery"
+								>
+									Gallery
 								</a>
 							</li>
 							<li style="padding-top:1%;">

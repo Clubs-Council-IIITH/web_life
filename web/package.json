@@ -49,6 +49,7 @@
   "dependencies": {
     "@apollo/client": "^3.10.5",
     "@floating-ui/dom": "1.6.5",
+    "date-fns": "^3.6.0",
     "graphql": "^16.8.2",
     "graphql-tag": "^2.12.6",
     "highlight.js": "11.9.0",

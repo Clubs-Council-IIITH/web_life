@@ -2,10 +2,10 @@ import type { PageServerLoad } from './$types';
 import { getClient } from '$lib/gql/client';
 import { GET_USER_PROFILE } from '$lib/gql/queries/users';
 
-let staticUrl = 'http://clubs.iiit.ac.in/static';
 let FILESERVER_URL = 'https://clubs.iiit.ac.in';
-function getStaticFile(filepath: string) {
-	return `${staticUrl}/${filepath}`;
+
+function getStaticFile(filepath: string, filetype="image") {
+	return `${FILESERVER_URL}/files/static?filename=${filepath}&filetype=${filetype}`;
 }
 
 function getFile(filepath: String) {
@@ -19,9 +19,9 @@ function getFile(filepath: String) {
 }
 
 export const load: PageServerLoad = async () => {
-	const sacMembersFetch = await fetch(getStaticFile('json/sacMembers.json'));
-	const slcMembersFetch = await fetch(getStaticFile('json/slcMembers.json'));
-	const sloMembersFetch = await fetch(getStaticFile('json/sloMembers.json'));
+	const sacMembersFetch = await fetch(getStaticFile('sacMembers.json', "json"));
+	const slcMembersFetch = await fetch(getStaticFile('slcMembers.json', "json"));
+	const sloMembersFetch = await fetch(getStaticFile('sloMembers.json', "json"));
 
 	const sacMembers = await sacMembersFetch.json();
 	const slcMembers = await slcMembersFetch.json();
