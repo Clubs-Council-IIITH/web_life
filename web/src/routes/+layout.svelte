@@ -19,7 +19,7 @@
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import typescript from 'highlight.js/lib/languages/typescript';
 	import MobileNavigation from '$lib/Navigation/Navigation.svelte';
-
+    import Loader  from './Loader.svelte';
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
 	hljs.registerLanguage('javascript', javascript);
@@ -61,6 +61,27 @@
 	//Current Year
 	let currentYear = new Date().getFullYear();
 
+//for loader from here
+import { onMount } from 'svelte';
+let isLoading = true;
+//   setTimeout(() => {
+//     isLoading = false;
+//   }, 500); // Example timeout, replace with your actual loading logic
+function handleLoaded() {
+    isLoading=false; // Set isLoading to false when page is fully loaded
+  }
+  if (typeof window !== 'undefined') {
+    onMount(() => {
+      window.addEventListener('load', handleLoaded);
+
+      return () => {
+        window.removeEventListener('load', handleLoaded);
+      };
+    });
+  }
+  
+//for loader upto here
+
 	// function handleMouseOver(event: FocusEvent | MouseEvent) {
 	// 	(event.target as HTMLElement)?.classList.remove('variant-ghost-surface');
 	// 	(event.target as HTMLElement)?.classList.add('variant-filled-surface');
@@ -72,13 +93,88 @@
 	// }
 </script>
 
-<!-- App Shell -->
-<Drawer>
+
+
+  
+<style lange="postcss">
+	
+	hr {
+		border: none;
+		height: 2px;
+		background-color: #333;
+	}
+	.inline-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		gap: 10px;
+	}
+	.inline-list li {
+		display: inline;
+	}
+	.inline-list a {
+		text-decoration: none;
+	}
+
+	.inline-list-footer {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+		gap: 10px;
+	}
+	.footer-images {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 30px;
+	}
+	.footer-social {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 15px;
+	}
+	.footer_bottom {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		padding: 0 1em;
+	}
+	.footer_bottom a:hover {
+		text-decoration: underline;
+	}
+	.footer {
+		background-color: var(--surface);
+		color: var(--on-surface);
+		padding: 20px;
+		padding-top: 0px;
+	}
+	@media (max-width: 1024px) {
+		.inline-list {
+			display: none;
+		}
+	}
+</style>
+  
+
+  <Loader isLoading={isLoading} />
+  
+  <Drawer>
+	
 	<h2 class="p-4 navclass my-2" style="font-size: 22px">Navigation</h2>
 	<hr />
 	<MobileNavigation />
-</Drawer>
-<AppShell>
+  </Drawer>
+  
+  <AppShell>
+	<!-- AppShell content -->
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
 		<div class="bottom fixed-top">
@@ -258,70 +354,9 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
-</AppShell>
 
-<style lange="postcss">
-	hr {
-		border: none;
-		height: 2px;
-		background-color: #333;
-	}
-	.inline-list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		gap: 10px;
-	}
-	.inline-list li {
-		display: inline;
-	}
-	.inline-list a {
-		text-decoration: none;
-	}
+ </AppShell>
 
-	.inline-list-footer {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		text-align: center;
-		gap: 10px;
-	}
-	.footer-images {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		gap: 30px;
-	}
-	.footer-social {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		gap: 15px;
-	}
-	.footer_bottom {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		flex-wrap: nowrap;
-		padding: 0 1em;
-	}
-	.footer_bottom a:hover {
-		text-decoration: underline;
-	}
-	.footer {
-		background-color: var(--surface);
-		color: var(--on-surface);
-		padding: 20px;
-		padding-top: 0px;
-	}
-	@media (max-width: 1024px) {
-		.inline-list {
-			display: none;
-		}
-	}
-</style>
+  
+
+
