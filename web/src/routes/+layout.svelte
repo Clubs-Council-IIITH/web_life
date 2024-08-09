@@ -19,7 +19,7 @@
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import typescript from 'highlight.js/lib/languages/typescript';
 	import MobileNavigation from '$lib/Navigation/Navigation.svelte';
-    import Loader  from './Loader.svelte';
+	import Loader from './Loader.svelte';
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
 	hljs.registerLanguage('javascript', javascript);
@@ -61,30 +61,28 @@
 	//Current Year
 	let currentYear = new Date().getFullYear();
 
-//for loader from here
-import { onMount } from 'svelte';
-let isLoading = true;
-function checkLoaded() {
-	if(document.readyState==='complete')
-	{
-		isLoading=false;
-	}else{
-		setTimeout(checkLoaded,10);
+	//for loader from here
+	import { onMount } from 'svelte';
+	let isLoading = true;
+	function checkLoaded() {
+		if (document.readyState === 'complete') {
+			isLoading = false;
+		} else {
+			setTimeout(checkLoaded, 10);
+		}
 	}
-  }
-  if (typeof window !== 'undefined') {
-    onMount(() => {
-	if(document.readyState==='complete')
-	{
-		console.log("page loaded completely!!!");
-		isLoading=false;
-	}else{
-		setTimeout(checkLoaded,10);
+	if (typeof window !== 'undefined') {
+		onMount(() => {
+			if (document.readyState === 'complete') {
+				console.log('page loaded completely!!!');
+				isLoading = false;
+			} else {
+				setTimeout(checkLoaded, 10);
+			}
+		});
 	}
-    });
-  }
-  
-//for loader upto here
+
+	//for loader upto here
 
 	// function handleMouseOver(event: FocusEvent | MouseEvent) {
 	// 	(event.target as HTMLElement)?.classList.remove('variant-ghost-surface');
@@ -97,92 +95,16 @@ function checkLoaded() {
 	// }
 </script>
 
-
-
-  
-<style lange="postcss">
-	@media (min-width: 1024px) {
-		.lifelogo{
-			width: 8vw;
-			height: 8vh;
-		}
-	}
-	hr {
-		border: none;
-		height: 2px;
-		background-color: #333;
-	}
-	.inline-list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		gap: 10px;
-	}
-	.inline-list li {
-		display: inline;
-	}
-	.inline-list a {
-		text-decoration: none;
-	}
-
-	.inline-list-footer {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		text-align: center;
-		gap: 10px;
-	}
-	.footer-images {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		gap: 30px;
-	}
-	.footer-social {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		gap: 15px;
-	}
-	.footer_bottom {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		flex-wrap: nowrap;
-		padding: 0 1em;
-	}
-	.footer_bottom a:hover {
-		text-decoration: underline;
-	}
-	.footer {
-		background-color: var(--surface);
-		color: var(--on-surface);
-		padding: 20px;
-		padding-top: 0px;
-	}
-	@media (max-width: 1024px) {
-		.inline-list {
-			display: none;
-		}
-	}
-</style>
-  
 {#if isLoading}
-  <Loader isLoading={isLoading} />
+	<Loader {isLoading} />
 {/if}
-  
-  <Drawer>
-	
+
+<Drawer>
 	<h2 class="p-4 navclass my-2" style="font-size: 22px">Navigation</h2>
 	<hr />
 	<MobileNavigation />
-  </Drawer>
-  <AppShell>
+</Drawer>
+<AppShell>
 	<!-- AppShell content -->
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
@@ -198,10 +120,15 @@ function checkLoaded() {
 							</svg>
 						</span>
 					</button>
-					<img src={imgSrc} alt="IIIT Hyderabad Logo" class="h-12 lifelogo" />
+					<div style="display: flex; justify-content: center;">
+						<img
+							src={imgSrc}
+							alt="IIIT Hyderabad Logo"
+							class="h-10 lifelogo"
+							style="margin-left:2vw;"
+						/>
+					</div>
 				</svelte:fragment>
-				<script>
-				</script>
 				<svelte:fragment slot="trail">
 					<div>
 						<ul class="inline-list">
@@ -273,7 +200,7 @@ function checkLoaded() {
 			<hr />
 			<br />
 			<div class="footer-images">
-				<img src={footerImgSrc} alt="IIIT Hyderabad Logo" class="h-12 logo" />
+				<img src={footerImgSrc} alt="IIIT Hyderabad Logo" class="h-16 logo" />
 				<img src={imgSrc} alt="Life@IIIT Hyderabad Logo" class="h-12 lifelogo" />
 			</div>
 			<br />
@@ -363,9 +290,76 @@ function checkLoaded() {
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
+</AppShell>
 
- </AppShell>
+<style lange="postcss">
+	@media (min-width: 1024px) {
+		.lifelogo {
+			width: 7vw;
+			height: 7vh;
+		}
+	}
+	hr {
+		border: none;
+		height: 2px;
+		background-color: #333;
+	}
+	.inline-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		gap: 10px;
+	}
+	.inline-list li {
+		display: inline;
+	}
+	.inline-list a {
+		text-decoration: none;
+	}
 
-  
-
-
+	.inline-list-footer {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+		gap: 10px;
+	}
+	.footer-images {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 30px;
+	}
+	.footer-social {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 15px;
+	}
+	.footer_bottom {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		padding: 0 1em;
+	}
+	.footer_bottom a:hover {
+		text-decoration: underline;
+	}
+	.footer {
+		background-color: var(--surface);
+		color: var(--on-surface);
+		padding: 20px;
+		padding-top: 0px;
+	}
+	@media (max-width: 1024px) {
+		.inline-list {
+			display: none;
+		}
+	}
+</style>
