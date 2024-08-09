@@ -99,7 +99,7 @@
 	<Loader {isLoading} />
 {/if}
 
-<Drawer>
+<Drawer class="w-60">
 	<h2 class="p-4 navclass my-2" style="font-size: 22px">Navigation</h2>
 	<hr />
 	<MobileNavigation />
@@ -120,11 +120,11 @@
 							</svg>
 						</span>
 					</button>
-					<div style="display: flex; justify-content: center;">
+					<div style="display: flex; justify-content: center;" class="navlogo-container">
 						<img
 							src={imgSrc}
 							alt="IIIT Hyderabad Logo"
-							class="h-10 lifelogo"
+							class="h-10 navlifelogo"
 							style="margin-left:2vw;"
 						/>
 					</div>
@@ -293,10 +293,56 @@
 </AppShell>
 
 <style lange="postcss">
-	@media (min-width: 1024px) {
+	@media (min-width: 1436px) {
 		.lifelogo {
 			width: 7vw;
 			height: 7vh;
+		}
+		.navlifelogo {
+			width: 7vw;
+			height: 7vh;
+		}
+	}
+	@media (max-width: 413px)
+	{
+		.navlogo-container{
+			width: 30vw;
+		}
+	}
+	@media (min-width: 414px) and (max-width: 539px)
+	{
+		.navlogo-container{
+			width: 35vw;
+		}
+	}
+	@media (min-width: 540px) and (max-width:668px)
+	{
+		.navlogo-container{
+			width: 50vw;
+		}
+	}
+	@media (min-width: 668px) and (max-width:768px)
+	{
+		.navlogo-container{
+			width: 55vw;
+		}
+	}
+	@media (min-width: 768px) and (max-width:920px)
+	{
+		.navlogo-container{
+			width: 60vw;
+		}
+	}
+	@media (min-width: 921px) and (max-width:1023px)
+	{
+		.navlogo-container{
+			width: 68vw;
+		}
+	}
+	@media (width: 1024px)
+	{
+		.navlogo-container{
+			width: 90vw;
 		}
 	}
 	hr {
