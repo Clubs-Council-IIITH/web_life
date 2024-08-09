@@ -50,10 +50,10 @@
 
 	$: {
 		if ($modeCurrent == false) {
-			imgSrc = `${base}/life-iiit-white.png`;
+			imgSrc = `${base}/logo_dark.png`;
 			footerImgSrc = `${base}/iiit-logo-white.png`;
 		} else {
-			imgSrc = `${base}/life-iiit.png`;
+			imgSrc = `${base}/logo_light.png`;
 			footerImgSrc = `${base}/iiith_logo.png`;
 		}
 	}
@@ -64,19 +64,23 @@
 //for loader from here
 import { onMount } from 'svelte';
 let isLoading = true;
-//   setTimeout(() => {
-//     isLoading = false;
-//   }, 500); // Example timeout, replace with your actual loading logic
-function handleLoaded() {
-    isLoading=false; // Set isLoading to false when page is fully loaded
+function checkLoaded() {
+	if(document.readyState==='complete')
+	{
+		isLoading=false;
+	}else{
+		setTimeout(checkLoaded,10);
+	}
   }
   if (typeof window !== 'undefined') {
     onMount(() => {
-      window.addEventListener('load', handleLoaded);
-
-      return () => {
-        window.removeEventListener('load', handleLoaded);
-      };
+	if(document.readyState==='complete')
+	{
+		console.log("page loaded completely!!!");
+		isLoading=false;
+	}else{
+		setTimeout(checkLoaded,10);
+	}
     });
   }
   
@@ -97,7 +101,12 @@ function handleLoaded() {
 
   
 <style lange="postcss">
-	
+	@media (min-width: 1024px) {
+		.lifelogo{
+			width: 8vw;
+			height: 8vh;
+		}
+	}
 	hr {
 		border: none;
 		height: 2px;
@@ -163,8 +172,9 @@ function handleLoaded() {
 	}
 </style>
   
-
+{#if isLoading}
   <Loader isLoading={isLoading} />
+{/if}
   
   <Drawer>
 	
@@ -172,7 +182,6 @@ function handleLoaded() {
 	<hr />
 	<MobileNavigation />
   </Drawer>
-  
   <AppShell>
 	<!-- AppShell content -->
 	<svelte:fragment slot="header">
@@ -189,7 +198,7 @@ function handleLoaded() {
 							</svg>
 						</span>
 					</button>
-					<img src={imgSrc} alt="IIIT Hyderabad Logo" class="h-12 logo" />
+					<img src={imgSrc} alt="IIIT Hyderabad Logo" class="h-12 lifelogo" />
 				</svelte:fragment>
 				<script>
 				</script>
@@ -265,7 +274,7 @@ function handleLoaded() {
 			<br />
 			<div class="footer-images">
 				<img src={footerImgSrc} alt="IIIT Hyderabad Logo" class="h-12 logo" />
-				<img src={imgSrc} alt="Life@IIIT Hyderabad Logo" class="h-12 logo" />
+				<img src={imgSrc} alt="Life@IIIT Hyderabad Logo" class="h-12 lifelogo" />
 			</div>
 			<br />
 			<div class="footer-social" style="color: {$modeCurrent ? 'black' : 'white'}">
