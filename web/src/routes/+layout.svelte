@@ -19,7 +19,7 @@
 	import javascript from 'highlight.js/lib/languages/javascript';
 	import typescript from 'highlight.js/lib/languages/typescript';
 	import MobileNavigation from '$lib/Navigation/Navigation.svelte';
-
+	import Loader from './Loader.svelte';
 	hljs.registerLanguage('xml', xml); // for HTML
 	hljs.registerLanguage('css', css);
 	hljs.registerLanguage('javascript', javascript);
@@ -50,16 +50,39 @@
 
 	$: {
 		if ($modeCurrent == false) {
-			imgSrc = `${base}/life-iiit-white.png`;
+			imgSrc = `${base}/logo_dark.png`;
 			footerImgSrc = `${base}/iiit-logo-white.png`;
 		} else {
-			imgSrc = `${base}/life-iiit.png`;
+			imgSrc = `${base}/logo_light.png`;
 			footerImgSrc = `${base}/iiith_logo.png`;
 		}
 	}
 
 	//Current Year
 	let currentYear = new Date().getFullYear();
+
+	//for loader from here
+	import { onMount } from 'svelte';
+	let isLoading = true;
+	function checkLoaded() {
+		if (document.readyState === 'complete') {
+			isLoading = false;
+		} else {
+			setTimeout(checkLoaded, 10);
+		}
+	}
+	if (typeof window !== 'undefined') {
+		onMount(() => {
+			if (document.readyState === 'complete') {
+				console.log('page loaded completely!!!');
+				isLoading = false;
+			} else {
+				setTimeout(checkLoaded, 10);
+			}
+		});
+	}
+
+	//for loader upto here
 
 	// function handleMouseOver(event: FocusEvent | MouseEvent) {
 	// 	(event.target as HTMLElement)?.classList.remove('variant-ghost-surface');
@@ -72,13 +95,17 @@
 	// }
 </script>
 
-<!-- App Shell -->
-<Drawer>
+{#if isLoading}
+	<Loader {isLoading} />
+{/if}
+
+<Drawer class="w-60">
 	<h2 class="p-4 navclass my-2" style="font-size: 22px">Navigation</h2>
 	<hr />
 	<MobileNavigation />
 </Drawer>
 <AppShell>
+	<!-- AppShell content -->
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
 		<div class="bottom fixed-top">
@@ -93,10 +120,15 @@
 							</svg>
 						</span>
 					</button>
-					<img src={imgSrc} alt="IIIT Hyderabad Logo" class="h-12 logo" />
+					<div style="display: flex; justify-content: center;" class="navlogo-container">
+						<img
+							src={imgSrc}
+							alt="IIIT Hyderabad Logo"
+							class="h-10 navlifelogo"
+							style="margin-left:2vw;"
+						/>
+					</div>
 				</svelte:fragment>
-				<script>
-				</script>
 				<svelte:fragment slot="trail">
 					<div>
 						<ul class="inline-list">
@@ -168,8 +200,8 @@
 			<hr />
 			<br />
 			<div class="footer-images">
-				<img src={footerImgSrc} alt="IIIT Hyderabad Logo" class="h-12 logo" />
-				<img src={imgSrc} alt="Life@IIIT Hyderabad Logo" class="h-12 logo" />
+				<img src={footerImgSrc} alt="IIIT Hyderabad Logo" class="h-16 logo" />
+				<img src={imgSrc} alt="Life@IIIT Hyderabad Logo" class="h-12 lifelogo" />
 			</div>
 			<br />
 			<div class="footer-social" style="color: {$modeCurrent ? 'black' : 'white'}">
@@ -261,6 +293,81 @@
 </AppShell>
 
 <style lange="postcss">
+	@media (min-width: 1436px) {
+		.lifelogo {
+			width: 7vw;
+			height: 7vh;
+		}
+		.navlifelogo {
+			width: 7vw;
+			height: 7vh;
+		}
+	}
+	@media (max-width: 411px)
+	{
+		.navlogo-container{
+			width: 100vw;
+			margin-left:4vw;
+		}
+		
+		.btn{
+			margin-left:-3vw;
+		}
+	}
+	@media (min-width: 412px) and (max-width: 539px)
+	{
+		.navlogo-container{
+			width: 100vw;
+			margin-left:6vw;
+		}
+		
+		.btn{
+			margin-left:-1vw;
+		}
+	}
+	@media (min-width: 540px) and (max-width:668px)
+	{
+		.navlogo-container{
+			width: 100vw;
+			margin-left:15vw;
+		}
+		
+		.btn{
+			margin-left:-2vw;
+		}
+
+	}
+	@media (min-width: 668px) and (max-width:768px)
+	{
+		.navlogo-container{
+			width: 100vw;
+			margin-left:19vw;
+		}
+		
+		.btn{
+			margin-left:-2vw;
+		}
+	}
+	@media (min-width: 768px) and (max-width:920px)
+	{
+		.navlogo-container{
+			width: 100vw;
+			margin-left: 19vw;
+		}
+	}
+	@media (min-width: 921px) and (max-width:1023px)
+	{
+		.navlogo-container{
+			width: 100vw;
+			margin-left: 19vw;
+		}
+	}
+	@media (width: 1024px)
+	{
+		.navlogo-container{
+			width: 90vw;
+		}
+	}
 	hr {
 		border: none;
 		height: 2px;
