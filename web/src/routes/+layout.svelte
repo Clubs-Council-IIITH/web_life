@@ -303,40 +303,63 @@
 			height: 7vh;
 		}
 	}
-	@media (max-width: 413px)
+	@media (max-width: 411px)
 	{
 		.navlogo-container{
-			width: 30vw;
+			width: 100vw;
+			margin-left:2vw;
+		}
+		
+		.btn{
+			margin-left:-3vw;
 		}
 	}
-	@media (min-width: 414px) and (max-width: 539px)
+	@media (min-width: 412px) and (max-width: 539px)
 	{
 		.navlogo-container{
-			width: 35vw;
+			width: 100vw;
+			margin-left:5vw;
+		}
+		
+		.btn{
+			margin-left:-1vw;
 		}
 	}
 	@media (min-width: 540px) and (max-width:668px)
 	{
 		.navlogo-container{
-			width: 50vw;
+			width: 100vw;
+			margin-left:13vw;
 		}
+		
+		.btn{
+			margin-left:-2vw;
+		}
+
 	}
 	@media (min-width: 668px) and (max-width:768px)
 	{
 		.navlogo-container{
-			width: 55vw;
+			width: 100vw;
+			margin-left:17vw;
+		}
+		
+		.btn{
+			margin-left:-2vw;
 		}
 	}
 	@media (min-width: 768px) and (max-width:920px)
 	{
 		.navlogo-container{
-			width: 60vw;
+			width: 100vw;
+			margin-left: 17vw;
 		}
 	}
 	@media (min-width: 921px) and (max-width:1023px)
 	{
 		.navlogo-container{
-			width: 68vw;
+			width: 100vw;
+			margin-left: 17vw;
 		}
 	}
 	@media (width: 1024px)
