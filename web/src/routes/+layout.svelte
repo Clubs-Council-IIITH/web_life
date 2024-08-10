@@ -307,7 +307,7 @@
 	{
 		.navlogo-container{
 			width: 100vw;
-			margin-left:2vw;
+			margin-left:4vw;
 		}
 		
 		.btn{
@@ -318,7 +318,7 @@
 	{
 		.navlogo-container{
 			width: 100vw;
-			margin-left:5vw;
+			margin-left:6vw;
 		}
 		
 		.btn{
@@ -329,7 +329,7 @@
 	{
 		.navlogo-container{
 			width: 100vw;
-			margin-left:13vw;
+			margin-left:15vw;
 		}
 		
 		.btn{
@@ -341,7 +341,7 @@
 	{
 		.navlogo-container{
 			width: 100vw;
-			margin-left:17vw;
+			margin-left:19vw;
 		}
 		
 		.btn{
@@ -352,14 +352,14 @@
 	{
 		.navlogo-container{
 			width: 100vw;
-			margin-left: 17vw;
+			margin-left: 19vw;
 		}
 	}
 	@media (min-width: 921px) and (max-width:1023px)
 	{
 		.navlogo-container{
 			width: 100vw;
-			margin-left: 17vw;
+			margin-left: 19vw;
 		}
 	}
 	@media (width: 1024px)
