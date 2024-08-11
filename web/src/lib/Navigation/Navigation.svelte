@@ -21,7 +21,7 @@
 	}
 </script>
 
-<nav class="list px-2 py-4" style={`color: ${color}`}>
+<nav class="list px-2 py-4 mb-5" style={`color: ${color}`}>
 	<ul class="menu">
 		<li class={current_page === '/' ? 'variant-filled-primary' : ''}>
 			<a href="/" on:click={drawerClose}>Home</a>
