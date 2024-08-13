@@ -41,7 +41,11 @@
 	initializeStores();
 	const drawerStore = getDrawerStore();
 	function drawerOpen() {
-		drawerStore.open({});
+		drawerStore.open({
+			width: 'w-[250px] sm:w-[350px] md:w-[450px]',
+			rounded: 'rounded-xl',
+			padding: 'p-2',
+		});
 	}
 
 	//For Inverted Logos
@@ -99,11 +103,12 @@
 	<Loader {isLoading} />
 {/if}
 
-<Drawer class="w-60">
-	<h2 class="p-4 navclass my-2" style="font-size: 22px">Navigation</h2>
+<Drawer class="lg:hidden">
+	<h2 class="p-4 navclass mt-2" style="font-size: 22px">Navigation</h2>
 	<hr />
 	<MobileNavigation />
 </Drawer>
+
 <AppShell>
 	<!-- AppShell content -->
 	<svelte:fragment slot="header">
