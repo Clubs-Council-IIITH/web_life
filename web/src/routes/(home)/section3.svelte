@@ -1,13 +1,33 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+
 	export let data: PageData;
 	let event_data = data.page_server_data['events'];
+
+	function getPlaceholder({
+		seed,
+		w = 640,
+		h = 480,
+		blur = 1,
+	}: {
+		seed: string;
+		w?: number;
+		h?: number;
+		blur?: number;
+	}): string {
+		const encodedSeed = btoa(seed);
+		return `https://picsum.photos/seed/${encodedSeed}/${w}/${h}?blur=${blur}`;
+	}
 </script>
 
 <svelte:head>
 	{#each event_data as event}
 		<link rel="preload" href={event.image} as="image">
-		<link rel="preload" href={event.club_logo} as="image">
+		{#if event.club_logo}
+			<link rel="preload" href={event.club_logo} as="image">
+		{:else}
+			<link rel="preload" href={getPlaceholder({ seed: event.club_name })} as="image">
+		{/if}
 	{/each}
 </svelte:head>
 
@@ -29,11 +49,11 @@
 				<div class="col-lg-4 col-md-6 wrap">
 					<div class="card__wrap text-white">
 						<div class="image">
-							<img src={event.image} alt="" title="" />
+							<img src={event.image || getPlaceholder({ seed: event.club_name })} alt="" title="" />
 						</div>
 						<div class="card__post">
 							<div class="image__post">
-								<img src={event.club_logo} alt="" />
+								<img src={event.club_logo || getPlaceholder({ seed: event.club_name })} alt="" />
 							</div>
 							<div class="author__post">
 								<p class="author mbr-fonts-style display-4">
@@ -43,15 +63,9 @@
 							</div>
 						</div>
 						<div class="card__content">
-							<!-- <div class="card__topic">
-								<span class="category__content mbr-medium  mbr-fonts-style display-4">Holidays</span>
-								<span class="circle"></span>
-								<span class="category__estimate mbr-medium  mbr-fonts-style display-4">6 min read</span>
-							</div> -->
 							<h3 class="content__title mbr-bold mbr-fonts-style display-7">
 								{event.name}
 							</h3>
-							<!-- <div class="mbr-section-btn2"><a class="btn btn-white-outline display-4" href="#">Show All<span class="fa-long-arrow-right fa mbr-iconfont mbr-iconfont-btn"></span></a></div> -->
 						</div>
 					</div>
 				</div>
