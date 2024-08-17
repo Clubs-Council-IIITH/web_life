@@ -172,6 +172,13 @@
 	.dark .container .flip-card {
 		color: black;
 	}
+
+	@media screen and (max-width: 920px) {
+		.cid-rRIizpy8Kq .col-lg-4 {
+			display: block;
+			max-width: 100%!important;
+		}
+	}
 	@media only screen and (max-width: 600px) {
 		.view-details-btn {
 			display: block;

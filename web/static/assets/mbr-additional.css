@@ -1628,53 +1628,22 @@ blockquote {
   overflow: hidden;
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
-@media screen and (min-width:768px) and (max-width:819px) {
+@media screen and (min-width:768px) and (max-width:1040px) {
   .cid-rRIizpy8Kq .card__wrap{
-    width: 96vw;
+    width: 100%;
   }
-  
 }
-@media screen and (min-width:820px) and (max-width:820px) {
-  .cid-rRIizpy8Kq .card__wrap{
-    width: 90vw;
-  }
-  
-}
-@media screen and (min-width:821px) and (max-width:852px) {
-  .cid-rRIizpy8Kq .card__wrap{
-    width: 96vw;
-  }
-  
-}
-@media screen and (min-width:853px) and (max-width:853px) {
-  .cid-rRIizpy8Kq .card__wrap{
-    width: 87vw;
-  }
-  
-}
-@media screen and (min-width:854px) and (max-width:911px) {
-  .cid-rRIizpy8Kq .card__wrap{
-    width: 96vw;
-  }
-  
-}
-@media screen and (min-width:912px) and (max-width:912px) {
-  .cid-rRIizpy8Kq .card__wrap{
-    width: 80vw;
-  }
-  
-}
-@media screen and (min-width:913px) and (max-width:920px) {
-  .cid-rRIizpy8Kq .card__wrap{
-    width: 96vw;
-  }
-  
-}
-@media screen and (min-width:768px) and (max-width:920px) {
+
+@media screen and (min-width:768px) and (max-width:1280px) {
   .cid-rRIizpy8Kq .col-lg-4{
-    width: 100vw;
+    width: 100%;
     display: block;
     padding-bottom: 2%;
+  }
+
+  .event_card{
+    max-width: 100%!important;
+    flex: 0 0 50%!important;
   }
 }
 
