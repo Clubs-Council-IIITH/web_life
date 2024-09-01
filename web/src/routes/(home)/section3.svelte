@@ -75,7 +75,7 @@
 				</div>
 			{/each}
 			<div class="col-lg-4 col-md-6 wrap event_card">
-				<a href="https://clubs.iiit.ac.in/events?upcoming=true&completed=true" target="_blank">
+				<a href="https://clubs.iiit.ac.in/events" target="_blank">
 					<div class="card__wrap text-white">
 						<div class="image">
 							<img src="https://placehold.co/600x400?text=See+More" alt="See more events" title="See more events" />
